@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">UNSW Gamified Learning App</string>
+    <string name="line1">|</string>
+    <string name="line2">|</string>
 </resources>
