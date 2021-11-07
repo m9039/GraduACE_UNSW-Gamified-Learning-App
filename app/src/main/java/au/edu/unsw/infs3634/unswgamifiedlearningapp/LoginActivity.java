@@ -17,5 +17,7 @@ public class LoginActivity extends AppCompatActivity {
     public void goToRegister(View view){
         Intent intent = new Intent (this, RegisterActivity.class);
         startActivity(intent);
+        //Removes animation when switching to registerActivity
+        overridePendingTransition(0,0);
     }
 }

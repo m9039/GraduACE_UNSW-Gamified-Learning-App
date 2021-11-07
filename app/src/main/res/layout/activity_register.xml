@@ -1,65 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<androidx.appcompat.widget.LinearLayoutCompat
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/btnLoginSelect"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:textStyle="bold"
-        android:layout_marginLeft="100sp"
-        android:layout_marginTop="190sp"
-        android:background="#00FFFFFF"
-        android:text="Login" />
-
-    <TextView
-        android:id="@+id/line"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/line2"
-        android:textColor="#FFFFFF"
-        android:textSize="40sp"
-        app:layout_constraintLeft_toRightOf="@id/btnLoginSelect"
-        app:layout_constraintTop_toTopOf="@id/btnLoginSelect" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/btnRegisterSelect"
-        app:layout_constraintLeft_toRightOf="@id/line"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginLeft="0sp"
-        android:layout_marginTop="190sp"
-        android:textStyle="bold"
-        android:background="#00FFFFFF"
-        android:text="Register" />
+    android:layout_height="match_parent"
+    android:background="#5F68C3">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginTop="50sp"
         android:background="#5F68C3"
-        android:onClick="goToLogin"
+        android:gravity="center_horizontal"
         android:orientation="vertical"
-        tools:context=".RegisterActivity"
-        tools:layout_editor_absoluteX="26dp"
-        tools:layout_editor_absoluteY="74dp">
+        tools:context=".RegisterActivity">
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="graduACE"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="130dp"
+            android:layout_marginTop="30sp"
+            android:src="@drawable/dog_logo" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50sp">
+
+            <Button
+                android:id="@+id/btnLoginSelect"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30sp"
+                android:layout_marginBottom="20sp"
+                android:background="#00FFFFFF"
+                android:text="Login"
+                android:onClick="goToLogin"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/line"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="-10sp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:text="|"
+                android:textSize="50sp" />
+
+            <Button
+                android:id="@+id/btnRegisterSelect"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="-10sp"
+                android:background="#00FFFFFF"
+                android:textStyle="bold"
+                android:text="Sign Up"
+                android:textSize="30sp" />
+
+        </LinearLayout>
 
         <EditText
             android:id="@+id/etName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20sp"
-            android:layout_marginTop="250sp"
             android:layout_marginRight="20sp"
             android:background="#E5E5E5"
-            android:ems="10"
+            android:ems="20"
             android:gravity="center_horizontal|center_vertical"
             android:hint="Name"
             android:inputType="textPersonName"
@@ -70,8 +86,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20sp"
-            android:layout_marginTop="5sp"
             android:layout_marginRight="20sp"
+            android:layout_marginTop="5sp"
             android:background="#E5E5E5"
             android:ems="10"
             android:gravity="center_horizontal|center_vertical"
@@ -98,11 +114,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20sp"
-            android:layout_marginTop="30sp"
+            android:layout_marginTop="29sp"
             android:layout_marginRight="20sp"
             android:backgroundTint="#E7AD5D"
-            android:text="Register" />
-
+            android:text="Login" />
     </LinearLayout>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.appcompat.widget.LinearLayoutCompat>
