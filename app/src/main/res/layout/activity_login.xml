@@ -80,6 +80,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="Username"
+            android:textColor="@color/white"
             android:inputType="textPersonName"
             android:minHeight="48dp"
             android:drawableEnd="@drawable/ic_user"/>
@@ -95,6 +96,7 @@
             android:layout_marginTop="5sp"
             android:ems="10"
             android:hint="Password"
+            android:textColor="@color/white"
             android:inputType="textPassword"
             android:minHeight="48dp"
             android:drawableEnd="@drawable/ic_password"/>
