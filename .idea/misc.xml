@@ -4,7 +4,11 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/drawable/btn_round_corner.xml" value="0.2994791666666667" />
+        <entry key="app/src/main/res/drawable/seek_bar.xml" value="0.2994791666666667" />
+        <entry key="app/src/main/res/drawable/seek_bar_thumb.xml" value="0.2948717948717949" />
+        <entry key="app/src/main/res/layout/activity_home.xml" value="0.14479166666666668" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.165" />
+        <entry key="app/src/main/res/layout/activity_personalityquiz.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_register.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_signUp.xml" value="0.1" />
       </map>

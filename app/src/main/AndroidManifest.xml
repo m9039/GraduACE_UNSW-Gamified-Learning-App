@@ -14,10 +14,16 @@
         android:theme="@style/Theme.UNSWGamifiedLearningApp"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".PersonalityQuizActivity"
+            android:exported="true" />
+        <activity
             android:name=".RegisterActivity"
             android:exported="true" />
         <activity
             android:name=".HomeActivity"
+            android:exported="true" />
+        <activity
+            android:name=".PersonalityHomeActivity"
             android:exported="true" />
         <activity
             android:name=".LoginActivity"
