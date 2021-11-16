@@ -29,7 +29,7 @@ public class PersonalityQuizActivity extends AppCompatActivity {
     private ArrayList<PersonalityQuiz> extraversionPersonalityQuizArrayList;
     private ArrayList<PersonalityQuiz> agreeablenessPersonalityQuizArrayList;
     private ArrayList<PersonalityQuiz> neuroticismPersonalityQuizArrayList;
-    int currentScore = 0, newScore=0,currentQuestionPosition = 0, seekBarProgress = 3, currentArrayPosition=0;
+    int currentScore = 0, currentQuestionPosition = 0, seekBarProgress = 3, currentArrayPosition=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

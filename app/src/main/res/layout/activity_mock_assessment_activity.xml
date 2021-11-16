@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_centerInParent="false"
+    android:layout_centerHorizontal="false"
+    android:layout_centerVertical="false"
+    android:background="#DADCF1"
+    android:orientation="vertical"
+    tools:context=".MockAssessmentQActivity">
+
+    <TextView
+        android:id="@+id/tvQuizTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginRight="30dp"
+        android:text="Type of assessment"
+        android:textSize="32sp"
+        android:textStyle="bold" />
+
+
+    <TextView
+        android:id="@+id/tvQuestionNumber"
+        android:layout_width="88dp"
+        android:layout_height="54dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="-27dp"
+        android:background="@drawable/btn_round_corner"
+        android:backgroundTint="#5F68C3"
+        android:elevation="20dp"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="5/5"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="479dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:background="@drawable/btn_round_corner"
+        android:backgroundTint="@color/white"
+        android:elevation="10dp"
+        android:gravity="center"
+        android:padding="10dp"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvQuestion"
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="-440dp"
+        android:text="QUESTIONS"
+        android:elevation="10dp"
+        android:gravity="center"
+        android:padding="10dp"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/ivImage"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:elevation="10dp" />
+
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:elevation="10dp">
+
+        <Button
+            android:id="@+id/btnOptionA"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="@color/white"
+            android:text="A"
+            android:textColor="#646570"
+            android:textStyle="bold"
+            app:strokeColor="#5F67C9"
+            app:strokeWidth="2dp" />
+
+        <Button
+            android:id="@+id/btnOptionC"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="@color/white"
+            android:text="C"
+            android:textColor="#646570"
+            android:textStyle="bold"
+            app:strokeColor="#5F67C9"
+            app:strokeWidth="2dp" />
+
+        <Button
+            android:id="@+id/btnOptionB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_row="1"
+            android:layout_column="0"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="@color/white"
+            android:text="B"
+            android:textColor="#646570"
+            android:textStyle="bold"
+            app:strokeColor="#5F67C9"
+            app:strokeWidth="2dp" />
+
+        <Button
+            android:id="@+id/btnOptionD"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="@color/white"
+            android:text="D"
+            android:textColor="#646570"
+            android:textStyle="bold"
+            app:strokeColor="#5F67C9"
+            app:strokeWidth="2dp" />
+    </GridLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="59dp"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnSolution"
+            android:layout_width="129dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="68dp"
+            android:background="@drawable/btn_round_corner"
+            android:text="Solution"
+            android:textAllCaps="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <Button
+            android:id="@+id/btnViewResults"
+            android:layout_width="129dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/btn_round_corner"
+            android:text="View Results"
+            android:textAllCaps="false"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.773"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <Button
+            android:id="@+id/btnNextQuestion"
+            android:layout_width="129dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="21dp"
+            android:background="@drawable/btn_round_corner"
+            android:text="Next"
+            android:textAllCaps="false"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/btnSolution"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>
+
