@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/bg_purple">
+
+    <ImageView
+        android:id="@+id/ivBackground"
+        android:layout_width="390dp"
+        android:layout_height="94dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/btn_round_corner" />
+
+    <ImageView
+        android:id="@+id/pResourcePic"
+        android:layout_width="81dp"
+        android:layout_height="103dp"
+        android:layout_margin="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/ivBackground"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/reading" />
+
+    <TextView
+        android:id="@+id/pName"
+        android:layout_width="277dp"
+        android:layout_height="62dp"
+        android:layout_marginTop="22dp"
+        android:layout_marginEnd="16dp"
+        android:text="CV Best Practices"
+        android:textAlignment="center"
+        android:textColor="#414141"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/ivBackground"
+        app:layout_constraintTop_toTopOf="@+id/ivBackground" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -49,7 +49,7 @@ public class RegisterActivity extends AppCompatActivity {
                 email = String.valueOf(etEmail.getText());
 
                 //When there is text in all fields, then execute:
-                if (!name.equals("") && !username.equals("") && !password.equals("") && !email.equals("")) {
+                if (!name.equals("") && !username.equals("") && !password.equals("") && !email.equals("")) { 
                     //Start ProgressBar first (Set visibility VISIBLE)
                     Handler handler = new Handler(Looper.getMainLooper());
                     handler.post(new Runnable() {
@@ -68,10 +68,15 @@ public class RegisterActivity extends AppCompatActivity {
                             data[1] = "username";
                             data[2] = "password";
                             data[3] = "email";
-                            PutData putData = new PutData("http://local/LoginRegister/signup.php", "POST", field, data);
+                            PutData putData = new PutData("http://192.168.1.129/LoginRegister/signup.php", "POST", field, data);
                             if (putData.startPut()) {
                                 if (putData.onComplete()) {
                                     String result = putData.getResult();
+                                    if(result.equals("Sign Up Success")) {
+                                      Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+                                      startActivity(intent);
+                                      finish();
+                                    }
                                     //End ProgressBar (Set visibility to GONE)
                                 }
                             }
