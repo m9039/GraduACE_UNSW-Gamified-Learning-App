@@ -19,8 +19,9 @@
         android:layout_marginTop="50dp"
         android:layout_marginRight="30dp"
         android:text="How OPEN are you?"
-        android:textSize="35sp"
+        android:textSize="32sp"
         android:textStyle="bold" />
+
 
     <TextView
         android:id="@+id/tvQuestionNumber"

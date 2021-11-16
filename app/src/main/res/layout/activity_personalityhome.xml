@@ -57,7 +57,6 @@
             android:drawableLeft="@drawable/openness"
             android:fontFamily="sans-serif-medium"
             android:gravity="left|center_vertical"
-            android:onClick="goToQuiz"
             android:text="Openness"
             android:textAllCaps="false"
             android:textColor="@color/black"
