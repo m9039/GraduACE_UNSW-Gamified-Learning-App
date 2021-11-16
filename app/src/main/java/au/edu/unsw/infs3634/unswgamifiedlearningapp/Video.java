@@ -65,16 +65,26 @@ public class Video {
 
     public static ArrayList<Video> getVideo() {
         ArrayList<Video> videos = new ArrayList<>();
-        videos.add(new Video("1", "CV Best Practices", "A strong CV is crucial if you want to land interviews for the best jobs, so this video breaks down the CV writing process into simple steps.", "Source: StandOut CV", "_fP43gcBywU", R.drawable.reading));
-        videos.add(new Video("2", "How to write a cover letter", "a", "Source: ZipJob", "jHg0b7Nai6c", R.drawable.mail));
-        videos.add(new Video("3", "Recently graduated? Where to next?!", "a", "Source: Simple Victoria", "Has9xYpF4XQ", R.drawable.graduation_cap));
-        videos.add(new Video("4", "How to write a professional email", "a", "Source: CTL", "SMnjShkHCug", R.drawable.send));
-        videos.add(new Video("5", "Preparing for an interview", "a", "Source: StandOut CV", "HG68Ymazo18", R.drawable.newspaper));
-        videos.add(new Video("6", "Video Interview tips", "a", "Source: StandOut CV", "Si4GLeQoqLA", R.drawable.laptop));
-        videos.add(new Video("7", "Acing the Assessment Centre", "a", "Source: StandOut CV", "_mWqvsCC9kM", R.drawable.success));
-        videos.add(new Video("8", "Networking 101: How to make connections", "a", "Source: StandOut CV", "OVf5c7NthSw", R.drawable.email));
-        videos.add(new Video("9", "Persevering after professional rejection", "a", "Source: StandOut CV", "b3F5UATw_X8", R.drawable.target));
-        videos.add(new Video("10", "Things to know before changing career paths", "a", "Source: StandOut CV", "MIjH8MCbONI", R.drawable.responsive));
+        videos.add(new Video("1", "CV/Resume Best Practices", "A strong CV is crucial if you want to land interviews for the best jobs, so this video breaks down the CV writing process into simple steps.",
+                "Source: StandOut CV", "_fP43gcBywU", R.drawable.reading));
+        videos.add(new Video("2", "How to write a cover letter", "A well written cover letter could increase your chances of an interview by 50%.This video shows you how to write an awesome cover letter that impresses employers.",
+                "Source: ZipJob", "jHg0b7Nai6c", R.drawable.mail));
+        videos.add(new Video("3", "Recently graduated? Where to next?!", "A video that discusses life after graduating university/college, covering uncertainty, depression, fears, anxiety, finding your call, passion or vocation and more.",
+                "Source: Simple Victoria", "Has9xYpF4XQ", R.drawable.graduation_cap));
+        videos.add(new Video("4", "How to write a professional email", "Need to learn how to write a professional email for your teachers and future employers or just interested in how a sandwich is made? Either way, look no further.",
+                "Source: CTL", "SMnjShkHCug", R.drawable.send));
+        videos.add(new Video("5", "Preparing for an interview", "Looking for interview tips? In this video, we dissect an entire job interview from start to finish, analysing everything from common interview questions to etiquette and how to follow up.",
+                "Source: Indeed", "HG68Ymazo18", R.drawable.newspaper));
+        videos.add(new Video("6", "Video Interview tips and tricks", "This video shows 10 helpful tips for making the best impression you can in your video interview, and demonstrating that you’re a great fit for the role.",
+                "Source: Forbes", "Si4GLeQoqLA", R.drawable.laptop));
+        videos.add(new Video("7", "Acing the Assessment Centre", "A video that uncovers tips for each stage of the Assessment Centre, preparing you to crush that AC with ease.",
+                "Source: Afzal Hussein", "_mWqvsCC9kM", R.drawable.success));
+        videos.add(new Video("8", "Networking 101: How to make connections", "Knowing how to network can strengthen your business connections and might even lead to a job referral. In this video, we'll show you how to navigate a networking event like a pro.",
+                "Source: Indeed", "OVf5c7NthSw", R.drawable.email));
+        videos.add(new Video("9", "Persevering after professional rejection", "In this video, you’ll learn strategies for overcoming rejection.",
+                "Source: GCFLearnFree.org", "b3F5UATw_X8", R.drawable.target));
+        videos.add(new Video("10", "Things to know before changing career paths", "An insightful TED Talk video that raises questions that should be asked before changing careers.",
+                "Source: TEDx Talks", "MIjH8MCbONI", R.drawable.responsive));
 
         return videos;
     }

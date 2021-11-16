@@ -32,7 +32,7 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     public void goToResourceVideos(View view){
-        Intent intent = new Intent (this, PersonalityHomeActivity.class);
+        Intent intent = new Intent (this, ResourceHomeActivity.class);
         startActivity(intent);
     }
 }

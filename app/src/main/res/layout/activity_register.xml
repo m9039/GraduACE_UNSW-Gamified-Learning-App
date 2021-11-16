@@ -43,6 +43,7 @@
                 android:layout_marginBottom="20sp"
                 android:background="#00FFFFFF"
                 android:text="Login"
+                android:onClick="goToLogin"
                 android:textSize="30sp" />
 
             <TextView

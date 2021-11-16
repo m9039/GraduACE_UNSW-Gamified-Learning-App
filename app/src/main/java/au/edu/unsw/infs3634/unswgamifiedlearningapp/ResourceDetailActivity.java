@@ -25,7 +25,6 @@ public class ResourceDetailActivity extends AppCompatActivity {
         Intent intent = getIntent();
         String msg = intent.getStringExtra("transferMsg");
         Video video = Video.getName(msg);
-//        setTitle("Now Showing...");
 
         TextView name = findViewById(R.id.tvName);
         name.setText(video.getName());
@@ -39,7 +38,7 @@ public class ResourceDetailActivity extends AppCompatActivity {
         ImageView picture = findViewById(R.id.ivPicture);
         picture.setImageResource(video.getPicture());
 
-        //youtube player function - reference: https://github.com/PierfrancescoSoffritti/android-youtube-player
+        //youtube player function-reference: https://github.com/PierfrancescoSoffritti/android-youtube-player
         //embedded youtube video into resourcedetailactivity
         youTubePlayerView = findViewById(R.id.activity_youtubePlayerView);
         //ensures the video stops playing when exited
@@ -49,7 +48,7 @@ public class ResourceDetailActivity extends AppCompatActivity {
             @Override
             public void onReady(YouTubePlayer youTubePlayer) {
                 String vId = video.getVideoId();
-                //loads video automatically on when someone clicks the item row
+                //loads video automatically when someone clicks the item row
                 youTubePlayer.loadVideo(vId, 0);
             }
         });

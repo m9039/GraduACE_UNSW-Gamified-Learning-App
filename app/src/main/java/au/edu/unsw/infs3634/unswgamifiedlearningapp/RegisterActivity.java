@@ -35,56 +35,52 @@ public class RegisterActivity extends AppCompatActivity {
         etUsername = findViewById(R.id.etUsername);
         etPassword = findViewById(R.id.etPassword);
 
-        onSignUpClicked();
-    }
-
-    public void onSignUpClicked() {
         btnSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String name, username, password, email;
-                name = String.valueOf(etName.getText());
+                String fullname, username, password, email;
+                fullname = String.valueOf(etName.getText());
                 username = String.valueOf(etUsername.getText());
                 password = String.valueOf(etPassword.getText());
                 email = String.valueOf(etEmail.getText());
 
                 //When there is text in all fields, then execute:
-                if (!name.equals("") && !username.equals("") && !password.equals("") && !email.equals("")) { 
-                    //Start ProgressBar first (Set visibility VISIBLE)
+                if (!fullname.equals("") && !username.equals("") && !password.equals("") && !email.equals("")) {
                     Handler handler = new Handler(Looper.getMainLooper());
                     handler.post(new Runnable() {
                         @Override
                         public void run() {
-                            //Starting Write and Read data with URL
                             //Creating array for parameters
                             String[] field = new String[4];
-                            field[0] = name;
-                            field[1] = username;
-                            field[2] = password;
-                            field[3] = email;
+                            field[0] = "fullname";
+                            field[1] = "username";
+                            field[2] = "password";
+                            field[3] = "email";
                             //Creating array for data
                             String[] data = new String[4];
-                            data[0] = "name";
-                            data[1] = "username";
-                            data[2] = "password";
-                            data[3] = "email";
+                            data[0] = fullname;
+                            data[1] = username;
+                            data[2] = password;
+                            data[3] = email;
                             PutData putData = new PutData("http://192.168.1.129/LoginRegister/signup.php", "POST", field, data);
                             if (putData.startPut()) {
                                 if (putData.onComplete()) {
                                     String result = putData.getResult();
                                     if(result.equals("Sign Up Success")) {
-                                      Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
-                                      startActivity(intent);
-                                      finish();
+                                        Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+                                        startActivity(intent);
+                                        finish();
                                     }
-                                    //End ProgressBar (Set visibility to GONE)
+                                    else {
+                                        Toast.makeText(getApplicationContext(),result,Toast.LENGTH_SHORT).show();
+                                    }
                                 }
                             }
-                            //End Write and Read data with URL
                         }
                     });
-                } else {
-                    //When there is no text in the edit text fields, show toast
+                }
+                else {
+                    //When there is no text in the edit text fields, show error
                     Toast.makeText(getApplicationContext(), "All fields are required!", Toast.LENGTH_SHORT).show();
                 }
             }

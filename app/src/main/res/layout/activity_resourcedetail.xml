@@ -9,20 +9,19 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="378dp"
-        android:layout_height="543dp"
+        android:layout_width="373dp"
+        android:layout_height="509dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.515"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.728"
+        app:layout_constraintVertical_bias="0.716"
         app:srcCompat="@drawable/btn_round_corner" />
 
     <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
         android:id="@+id/activity_youtubePlayerView"
         android:layout_width="350dp"
-        android:layout_height="210dp"
+        android:layout_height="200dp"
         android:layout_marginStart="13dp"
         android:layout_marginEnd="10dp"
         app:layout_constraintBottom_toBottomOf="@+id/imageView"
@@ -37,13 +36,13 @@
 
     <TextView
         android:id="@+id/tvName"
-        android:layout_width="292dp"
-        android:layout_height="90dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="32dp"
-        android:text="CV Best Practices"
+        android:layout_width="374dp"
+        android:layout_height="91dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="48dp"
+        android:text="CV/Resume Best Practices"
         android:textColor="#414141"
-        android:textSize="40sp"
+        android:textSize="32sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -51,12 +50,14 @@
     <TextView
         android:id="@+id/tvDesc"
         android:layout_width="350dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="92dp"
+        android:layout_height="123dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="28dp"
         android:text="@string/description"
+        android:textAlignment="viewStart"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="@+id/imageView"
-        app:layout_constraintHorizontal_bias="0.464"
+        app:layout_constraintHorizontal_bias="0.545"
         app:layout_constraintStart_toStartOf="@+id/imageView"
         app:layout_constraintTop_toBottomOf="@+id/activity_youtubePlayerView" />
 
@@ -64,7 +65,8 @@
         android:id="@+id/tvSource"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="84dp"
         android:text="Source: StandOutCV"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="@+id/tvDesc"
@@ -74,8 +76,8 @@
         android:id="@+id/ivPicture"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="31dp"
+        android:layout_marginTop="52dp"
+        android:layout_marginEnd="20dp"
         app:layout_constraintEnd_toEndOf="@+id/imageView"
         app:layout_constraintTop_toBottomOf="@+id/tvDesc"
         app:srcCompat="@drawable/reading" />
