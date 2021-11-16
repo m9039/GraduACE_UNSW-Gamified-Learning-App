@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#DADCF1"
+    tools:context=".MockAssessmentActivity"
+    android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginRight="30dp"
+            android:text="Mock \nAssessments"
+            android:textSize="35sp"
+            android:textStyle="bold" />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginLeft="33dp"
+            android:layout_marginTop="33dp"
+            android:layout_marginRight="30dp"
+            android:background="@drawable/btn_round_corner"
+            android:backgroundTint="#9A404040"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvNumericalMock"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="30dp"
+            android:background="@drawable/btn_round_corner"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="44dp"
+            android:text="Numerical Reasoning"
+            android:textSize="24dp"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tvNumericalMock"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="256dp"
+            android:layout_height="59dp"
+            android:layout_marginStart="70dp"
+            android:layout_marginTop="84dp"
+            android:layout_marginRight="33dp"
+            android:text="Assesses your ability to handle and interpret numerical data to draw conclusions"
+            android:textSize="17sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.236"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tvNumericalMock"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="20dp"
+            android:foregroundGravity="center_vertical"
+            android:src="@drawable/numericalmock"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tvNumericalMock"
+            app:layout_constraintTop_toTopOf="@+id/tvNumericalMock"
+            app:layout_constraintVertical_bias="0.545" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginLeft="33dp"
+            android:layout_marginTop="33dp"
+            android:layout_marginRight="30dp"
+            android:background="@drawable/btn_round_corner"
+            android:backgroundTint="#9A404040"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/tvVerbalMock"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/btn_round_corner"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="44dp"
+            android:text="Verbal Reasoning"
+            android:textSize="24dp"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tvVerbalMock"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="252dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="70dp"
+            android:layout_marginTop="84dp"
+            android:layout_marginRight="33dp"
+            android:text="Assesses your ability to understand and comprehend written passages"
+            android:textSize="17sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.254"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tvVerbalMock"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="20dp"
+            android:foregroundGravity="center_vertical"
+            android:src="@drawable/verbalmock"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tvVerbalMock"
+            app:layout_constraintTop_toTopOf="@+id/tvVerbalMock"
+            app:layout_constraintVertical_bias="0.545" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginLeft="33dp"
+            android:layout_marginTop="33dp"
+            android:layout_marginRight="30dp"
+            android:background="@drawable/btn_round_corner"
+            android:backgroundTint="#9A404040"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvLogicalMock"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/btn_round_corner"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="44dp"
+            android:text="Logical Reasoning"
+            android:textSize="24dp"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tvLogicalMock"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="257dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="70dp"
+            android:layout_marginTop="84dp"
+            android:layout_marginRight="33dp"
+            android:text="Measures your ability to deduce logical consequences or rules from given preconditions"
+            android:textSize="17sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.268"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tvLogicalMock"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="20dp"
+            android:foregroundGravity="center_vertical"
+            android:src="@drawable/logicalmock"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tvLogicalMock"
+            app:layout_constraintTop_toTopOf="@+id/tvLogicalMock"
+            app:layout_constraintVertical_bias="0.545" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+<!--    <Button-->
+<!--        android:id="@+id/btnConscientiousness"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="150dp"-->
+<!--        android:layout_marginLeft="30dp"-->
+<!--        android:layout_marginTop="30dp"-->
+<!--        android:layout_marginRight="30dp"-->
+<!--        android:background="@drawable/btn_round_corner"-->
+<!--        android:drawableLeft="@drawable/verbalmock"-->
+<!--        android:gravity="left"-->
+<!--        android:text="Verbal Reasoning"-->
+<!--        android:textAllCaps="false"-->
+<!--        android:textColor="@color/black"-->
+<!--        android:textSize="21sp"-->
+<!--        app:backgroundTint="@color/white" />-->
+
+<!--    <Button-->
+<!--        android:id="@+id/btnExtraversion"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="150dp"-->
+<!--        android:layout_marginLeft="30dp"-->
+<!--        android:layout_marginTop="30dp"-->
+<!--        android:layout_marginRight="30dp"-->
+<!--        android:background="@drawable/btn_round_corner"-->
+<!--        android:drawableLeft="@drawable/logicalmock"-->
+<!--        android:gravity="left"-->
+<!--        android:text="Logical Reasoning"-->
+<!--        android:textAllCaps="false"-->
+<!--        android:textColor="@color/black"-->
+<!--        android:textSize="21sp"-->
+<!--        app:backgroundTint="@color/white" />-->
+
+</LinearLayout>
+
+
