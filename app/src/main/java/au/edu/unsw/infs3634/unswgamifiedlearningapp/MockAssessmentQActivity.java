@@ -77,6 +77,15 @@ public class MockAssessmentQActivity extends AppCompatActivity {
         btnNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                btnOptionA.setClickable(true);
+                btnOptionA.setEnabled(true);
+                btnOptionB.setClickable(true);
+                btnOptionB.setEnabled(true);
+                btnOptionC.setClickable(true);
+                btnOptionC.setEnabled(true);
+                btnOptionD.setClickable(true);
+                btnOptionD.setEnabled(true);
+
                 btnOptionA.setBackgroundColor(getColor(R.color.white));
                 btnOptionB.setBackgroundColor(getColor(R.color.white));
                 btnOptionC.setBackgroundColor(getColor(R.color.white));
@@ -121,6 +130,12 @@ public class MockAssessmentQActivity extends AppCompatActivity {
         btnOptionA.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                btnOptionB.setClickable(false);
+                btnOptionB.setEnabled(false);
+                btnOptionC.setClickable(false);
+                btnOptionC.setEnabled(false);
+                btnOptionD.setClickable(false);
+                btnOptionD.setEnabled(false);
                 if (quizType.equals("Numerical")){
                     if (numericalQuizArrayList.get(currentArrayPosition).getAnswer().trim().toLowerCase().equals(btnOptionA.getText().toString().trim().toLowerCase())){
                         btnOptionA.setBackgroundColor(getColor(R.color.green));
@@ -151,6 +166,13 @@ public class MockAssessmentQActivity extends AppCompatActivity {
         btnOptionB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                btnOptionA.setClickable(false);
+                btnOptionA.setEnabled(false);
+                btnOptionC.setClickable(false);
+                btnOptionC.setEnabled(false);
+                btnOptionD.setClickable(false);
+                btnOptionD.setEnabled(false);
+
                 if (quizType.equals("Numerical")){
                     if (numericalQuizArrayList.get(currentArrayPosition).getAnswer().trim().toLowerCase().equals(btnOptionB.getText().toString().trim().toLowerCase())){
                         btnOptionB.setBackgroundColor(getColor(R.color.green));
@@ -181,6 +203,13 @@ public class MockAssessmentQActivity extends AppCompatActivity {
         btnOptionC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                btnOptionA.setClickable(false);
+                btnOptionA.setEnabled(false);
+                btnOptionB.setClickable(false);
+                btnOptionB.setEnabled(false);
+                btnOptionD.setClickable(false);
+                btnOptionD.setEnabled(false);
+
                 if (quizType.equals("Numerical")){
                     if (numericalQuizArrayList.get(currentArrayPosition).getAnswer().trim().toLowerCase().equals(btnOptionC.getText().toString().trim().toLowerCase())){
                         btnOptionC.setBackgroundColor(getColor(R.color.green));
@@ -211,6 +240,13 @@ public class MockAssessmentQActivity extends AppCompatActivity {
         btnOptionD.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                btnOptionA.setClickable(false);
+                btnOptionA.setEnabled(false);
+                btnOptionB.setClickable(false);
+                btnOptionB.setEnabled(false);
+                btnOptionC.setClickable(false);
+                btnOptionC.setEnabled(false);
+
                 if (quizType.equals("Numerical")){
                     if (numericalQuizArrayList.get(currentArrayPosition).getAnswer().trim().toLowerCase().equals(btnOptionD.getText().toString().trim().toLowerCase())){
                         btnOptionD.setBackgroundColor(getColor(R.color.green));
