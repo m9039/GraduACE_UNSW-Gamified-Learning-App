@@ -19,7 +19,7 @@
         android:layout_marginTop="50dp"
         android:layout_marginRight="30dp"
         android:text="Type of assessment"
-        android:textSize="32sp"
+        android:textSize="28sp"
         android:textStyle="bold" />
 
 
@@ -29,7 +29,7 @@
         android:layout_height="54dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginLeft="30dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:layout_marginRight="30dp"
         android:layout_marginBottom="-27dp"
         android:background="@drawable/btn_round_corner"
@@ -66,8 +66,7 @@
         android:elevation="10dp"
         android:gravity="center"
         android:padding="10dp"
-        android:textSize="18sp"
-        android:textStyle="bold" />
+        android:textSize="15sp" />
 
     <ImageView
         android:id="@+id/ivImage"
@@ -139,7 +138,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="59dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="15dp"
         android:orientation="horizontal">
 
         <Button

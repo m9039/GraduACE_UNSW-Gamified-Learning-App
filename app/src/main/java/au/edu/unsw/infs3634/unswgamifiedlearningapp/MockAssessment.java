@@ -8,8 +8,9 @@ public class MockAssessment {
     private String optionC;
     private String optionD;
     private String answer;
+    private String solution;
 
-    public MockAssessment(String question, Integer image, String optionA, String optionB, String optionC, String optionD, String answer) {
+    public MockAssessment(String question, Integer image, String optionA, String optionB, String optionC, String optionD, String answer, String solution) {
         this.question = question;
         this.image = image;
         this.optionA = optionA;
@@ -17,6 +18,8 @@ public class MockAssessment {
         this.optionC = optionC;
         this.optionD = optionD;
         this.answer = answer;
+        this.solution = solution;
+
     }
 
     public String getQuestion() {
@@ -73,5 +76,13 @@ public class MockAssessment {
 
     public void setAnswer(String answer) {
         this.answer = answer;
+    }
+
+    public String getSolution() {
+        return solution;
+    }
+
+    public void setSolution(String solution) {
+        this.solution = solution;
     }
 }

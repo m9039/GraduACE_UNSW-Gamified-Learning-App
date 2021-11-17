@@ -30,17 +30,18 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="150dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="30dp"
+            android:layout_marginLeft="33dp"
+            android:layout_marginTop="33dp"
             android:layout_marginRight="30dp"
-            android:background="?android:attr/selectableItemBackground"
+            android:background="@drawable/btn_round_corner"
+            android:backgroundTint="#9A404040"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/tvNumericalMock"
             android:layout_width="350dp"
-            android:layout_height="145dp"
+            android:layout_height="150dp"
             android:layout_marginLeft="30dp"
             android:layout_marginTop="30dp"
             android:background="@drawable/btn_round_corner"

@@ -62,7 +62,7 @@ public class RegisterActivity extends AppCompatActivity {
                             data[1] = username;
                             data[2] = password;
                             data[3] = email;
-                            PutData putData = new PutData("http://192.168.1.129/LoginRegister/signup.php", "POST", field, data);
+                            PutData putData = new PutData("\"https://e3e9-220-245-114-74.ngrok.io/LoginRegister/signup.php?_ijt=9hug5nlg55kqgihgtualinqcr6&_ij_reload=RELOAD_ON_SAVE\"", "POST", field, data);
                             if (putData.startPut()) {
                                 if (putData.onComplete()) {
                                     String result = putData.getResult();
