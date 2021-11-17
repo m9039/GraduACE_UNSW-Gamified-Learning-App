@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "696272730757",
+    "firebase_url": "https://infs3634-417f3-default-rtdb.firebaseio.com",
+    "project_id": "infs3634-417f3",
+    "storage_bucket": "infs3634-417f3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:696272730757:android:27f8d3d43f176a0c81c7ec",
+        "android_client_info": {
+          "package_name": "au.edu.unsw.infs3634.unswgamifiedlearningapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "696272730757-mmvud22ga3jvdpdqihga9quhcq6v5li1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBnDYM-5P0BdHdBqJW3mPs3eVqhNQVFcH8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "696272730757-mmvud22ga3jvdpdqihga9quhcq6v5li1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
