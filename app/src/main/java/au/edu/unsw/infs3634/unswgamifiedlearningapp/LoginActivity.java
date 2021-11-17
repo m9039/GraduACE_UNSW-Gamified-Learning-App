@@ -1,85 +1,110 @@
 package au.edu.unsw.infs3634.unswgamifiedlearningapp;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Looper;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import com.vishnusivadas.advanced_httpurlconnection.PutData;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.FirebaseDatabase;
 
-public class LoginActivity extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
-    Button btnLogin;
-    EditText etUsername, etPassword;
+    Button login;
+    EditText etEmail, etPassword;
+    ProgressBar progressBar;
+    FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        etUsername = findViewById(R.id.etUsername);
+        etEmail = findViewById(R.id.etEmailLogin);
         etPassword = findViewById(R.id.etPassword);
-        btnLogin = findViewById(R.id.btnRegister);
 
-        btnLogin.setOnClickListener(new View.OnClickListener() {
+        login = findViewById(R.id.btnLogin);
+        login.setOnClickListener(this);
+
+        progressBar = findViewById(R.id.progressBar);
+
+        mAuth = FirebaseAuth.getInstance();
+
+
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.btnLogin:
+                loginUser();
+                break;
+        }
+    }
+
+    private void loginUser() {
+        String email = etEmail.getText().toString().trim();
+        String password = etPassword.getText().toString().trim();
+
+        if(email.isEmpty()) {
+            etEmail.setError("Email is required!");
+            etEmail.requestFocus();
+            return;
+        }
+
+        if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+            etEmail.setError("Please provide a valid email!");
+            etEmail.requestFocus();
+            return;
+        }
+
+        if(password.isEmpty()) {
+            etPassword.setError("Password is required!");
+            etPassword.requestFocus();
+            return;
+        }
+
+        if(password.length() < 6) {
+            etPassword.setError("Minimum password length should be 6 characters!");
+            etPassword.requestFocus();
+            return;
+        }
+
+        progressBar.setVisibility(View.VISIBLE);
+        mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
-            public void onClick(View view) {
-                String username, password;
-                username = String.valueOf(etUsername.getText());
-                password = String.valueOf(etPassword.getText());
+            public void onComplete(@NonNull Task<AuthResult> task) {
 
-                //When there is text in all fields, then execute:
-                if (!username.equals("") && !password.equals("")) {
-                    Handler handler = new Handler(Looper.getMainLooper());
-                    handler.post(new Runnable() {
-                        @Override
-                        public void run() {
-                            //Creating array for parameters
-                            String[] field = new String[2];
-                            field[0] = "username";
-                            field[1] = "password";
-                            //Creating array for data
-                            String[] data = new String[2];
-                            data[0] = username;
-                            data[1] = password;
-                            PutData putData = new PutData("https://e3e9-220-245-114-74.ngrok.io/LoginRegister/login.php?_ijt=egso0eni34ccb0o159u6c82459&_ij_reload=RELOAD_ON_SAVE", "POST", field, data);
-                            if (putData.startPut()) {
-                                if (putData.onComplete()) {
-                                    String result = putData.getResult();
-                                    if(result.equals("Login Success")) {
-                                        //if login success, transitions to home screen
-                                        Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
-                                        startActivity(intent);
-                                        finish();
-                                    }
-                                    else {
-                                        Toast.makeText(getApplicationContext(),result,Toast.LENGTH_SHORT).show();
-                                    }
-                                }
-                            }
-                        }
-                    });
-                }
-                else {
-                    //When there is no text in the edit text fields, brings up error
-                    Toast.makeText(getApplicationContext(), "All fields are required!", Toast.LENGTH_SHORT).show();
+                if (task.isSuccessful()) {
+                    //redirects to home activity
+                    startActivity(new Intent(LoginActivity.this, HomeActivity.class));
+                    Toast.makeText(getApplicationContext(), "Successful Login!", Toast.LENGTH_LONG).show();
+                    progressBar.setVisibility(View.GONE);
+
+                } else {
+                    Toast.makeText(getApplicationContext(), "Failed to login! Please check your credentials!", Toast.LENGTH_LONG).show();
+                    progressBar.setVisibility(View.GONE);
                 }
             }
         });
+    }
+
+        public void goToRegister (View view){
+            Intent intent = new Intent(this, RegisterActivity.class);
+            startActivity(intent);
+            //Removes animation when switching to registerActivity
+            overridePendingTransition(0, 0);
+        }
 
     }
 
-    public void goToRegister(View view){
-        Intent intent = new Intent (this, RegisterActivity.class);
-        startActivity(intent);
-        //Removes animation when switching to registerActivity
-        overridePendingTransition(0,0);
-    }
-
-}

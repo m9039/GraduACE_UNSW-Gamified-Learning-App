@@ -71,19 +71,19 @@
 
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etEmailLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="30sp"
             android:layout_marginRight="30sp"
             android:backgroundTint="#FFFFFF"
-            android:textColorHint="#FFFFFF"
-            android:id="@+id/etUsername"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:drawableEnd="@drawable/ic_email"
             android:ems="10"
-            android:hint="Username"
-            android:textColor="@color/white"
+            android:hint="Email"
             android:inputType="textPersonName"
             android:minHeight="48dp"
-            android:drawableEnd="@drawable/ic_user"/>
+            android:textColor="@color/white"
+            android:textColorHint="#FFFFFF" />
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_marginLeft="30sp"
@@ -102,7 +102,7 @@
             android:drawableEnd="@drawable/ic_password"/>
 
         <Button
-            android:id="@+id/btnRegister"
+            android:id="@+id/btnLogin"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20sp"
@@ -110,5 +110,12 @@
             android:layout_marginRight="20sp"
             android:background="@drawable/btn_round_corner"
             android:text="Login" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="invisible" />
     </LinearLayout>
 </androidx.appcompat.widget.LinearLayoutCompat>

@@ -105,7 +105,7 @@
             android:layout_marginRight="30sp"
             android:backgroundTint="#FFFFFF"
             android:textColorHint="#FFFFFF"
-            android:id="@+id/etUsername"
+            android:id="@+id/etEmailLogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5sp"
@@ -133,7 +133,7 @@
             android:drawableEnd="@drawable/ic_password"/>
 
         <Button
-            android:id="@+id/btnRegister"
+            android:id="@+id/btnLogin"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20sp"
@@ -141,5 +141,12 @@
             android:layout_marginRight="20sp"
             android:background="@drawable/btn_round_corner"
             android:text="Sign Up" />
+
+        <ProgressBar
+            android:id="@+id/progressBarRegister"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="invisible" />
     </LinearLayout>
 </androidx.appcompat.widget.LinearLayoutCompat>
