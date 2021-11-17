@@ -10,11 +10,8 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.android.material.bottomsheet.BottomSheetDialog;
-
-import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
@@ -73,6 +70,11 @@ public class PersonalityQuizActivity extends AppCompatActivity {
             setDataToViews(currentQuestionPosition,currentArrayPosition);
         }
 
+        seekBarChanged();
+        nextButtonClicked();
+    }
+
+    private void seekBarChanged (){
         seekbar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
@@ -85,11 +87,11 @@ public class PersonalityQuizActivity extends AppCompatActivity {
 
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
-                Toast.makeText(PersonalityQuizActivity.this, "Current score is: " + currentScore,
-                        Toast.LENGTH_SHORT).show();
             }
         });
+    }
 
+    private void nextButtonClicked (){
         btnNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -148,7 +150,7 @@ public class PersonalityQuizActivity extends AppCompatActivity {
     private void showResultBottomScreen(){
         BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(PersonalityQuizActivity.this);
         View bottomSheetView = LayoutInflater.from(getApplicationContext()).inflate(R.layout.personality_result, (LinearLayout)findViewById(R.id.llResult));
-        TextView tvPersonalityResult = bottomSheetView.findViewById(R.id.tvPersonalityResult);
+        TextView tvPersonalityResult = bottomSheetView.findViewById(R.id.tvMockAssessResult);
         Button btnReturnToQuizzes = bottomSheetView.findViewById(R.id.btnReturnToQuizzes);
         tvPersonalityResult.setText(personalityType);
         btnReturnToQuizzes.setOnClickListener(new View.OnClickListener() {

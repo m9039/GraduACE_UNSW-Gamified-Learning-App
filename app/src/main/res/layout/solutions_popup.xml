@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/llSolution"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#DADCF1"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="30dp"
+        android:gravity="center_horizontal"
+        android:text="Solution"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+
+    <TextView
+        android:id="@+id/tvQuestionNumber"
+        android:layout_width="88dp"
+        android:layout_height="54dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="-27dp"
+        android:background="@drawable/btn_round_corner"
+        android:backgroundTint="#5F68C3"
+        android:elevation="20dp"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="5/5"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="279dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:background="@drawable/btn_round_corner"
+        android:backgroundTint="@color/white"
+        android:elevation="10dp"
+        android:gravity="center"
+        android:padding="10dp"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvSolution"
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="-240dp"
+        android:layout_marginRight="30dp"
+        android:elevation="10dp"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="SOLUTIONS"
+        android:textSize="15sp" />
+
+    <Button
+        android:id="@+id/btnBack"
+        android:layout_width="132dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/btn_round_corner"
+        android:backgroundTint="@color/purple_500"
+        android:foregroundGravity="center_horizontal"
+        android:text="Back"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textStyle="bold" />
+
+
+</LinearLayout>

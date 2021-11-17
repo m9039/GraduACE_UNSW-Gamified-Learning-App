@@ -8,7 +8,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/tvPersonalityResult"
+        android:id="@+id/tvMockAssessResult"
         android:textSize="20sp"
         android:textAllCaps="false"
         android:textAlignment="center"

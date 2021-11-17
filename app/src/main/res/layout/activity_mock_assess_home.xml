@@ -40,7 +40,8 @@
 
         <TextView
             android:id="@+id/tvNumericalMock"
-            android:layout_width="350dp"
+            android:layout_width="match_parent"
+            android:layout_marginRight="30dp"
             android:layout_height="150dp"
             android:layout_marginLeft="30dp"
             android:layout_marginTop="30dp"
@@ -119,7 +120,8 @@
 
         <TextView
             android:id="@+id/tvVerbalMock"
-            android:layout_width="350dp"
+            android:layout_width="match_parent"
+            android:layout_marginRight="30dp"
             android:layout_height="150dp"
             android:layout_marginLeft="30dp"
             android:layout_marginTop="30dp"
@@ -198,7 +200,8 @@
 
         <TextView
             android:id="@+id/tvLogicalMock"
-            android:layout_width="350dp"
+            android:layout_width="match_parent"
+            android:layout_marginRight="30dp"
             android:layout_height="150dp"
             android:layout_marginLeft="30dp"
             android:layout_marginTop="30dp"
