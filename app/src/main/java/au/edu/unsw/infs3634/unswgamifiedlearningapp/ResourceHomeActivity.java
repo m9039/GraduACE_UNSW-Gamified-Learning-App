@@ -24,7 +24,7 @@ public class ResourceHomeActivity extends AppCompatActivity implements VideoAdap
         setContentView(R.layout.activity_resourcehome);
 
         //Instantiate RecyclerView
-        mRecyclerView = findViewById(R.id.videoRecyclerView);
+        mRecyclerView = findViewById(R.id.jobRecyclerView);
         //Set setHasFixedSize true if contents of the adapter does not change in its height or width
         mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
