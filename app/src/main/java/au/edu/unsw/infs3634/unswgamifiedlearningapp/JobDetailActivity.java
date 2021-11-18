@@ -24,6 +24,9 @@ public class JobDetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_jobdetail);
 
+        ibMenu = findViewById(R.id.ibMenu);
+        ibMenuClicked();
+
         Intent intent = getIntent();
         String msg = intent.getStringExtra("transferMsg");
         Job jobs = Job.getJobName(msg);
@@ -49,6 +52,7 @@ public class JobDetailActivity extends AppCompatActivity {
             }
         });
     }
+
     private void ibMenuClicked() {
         ibMenu.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -115,5 +119,10 @@ public class JobDetailActivity extends AppCompatActivity {
             }
         });
 
+        //Cancels bottom sheet dialog when user clicks another part of the screen
+        bottomSheetDialog.setCancelable(false);
+        bottomSheetDialog.setContentView(bottomSheetView);
+        bottomSheetDialog.show();
     }
+
 }

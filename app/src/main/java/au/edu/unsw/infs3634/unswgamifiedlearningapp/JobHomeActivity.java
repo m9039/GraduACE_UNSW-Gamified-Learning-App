@@ -12,6 +12,7 @@ import android.widget.LinearLayout;
 import android.widget.SearchView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -33,7 +34,7 @@ public class JobHomeActivity extends AppCompatActivity implements JobAdapter.Cli
         //Instantiate RecyclerView
         mRecyclerView = findViewById(R.id.jobRecyclerView);
         mRecyclerView.setHasFixedSize(true);
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        mRecyclerView.setLayoutManager(new GridLayoutManager(this, 2));
         mAdapter = new JobAdapter(this, mJobs, this);
         mRecyclerView.setAdapter(mAdapter);
         ibMenu = findViewById(R.id.ibMenu);
