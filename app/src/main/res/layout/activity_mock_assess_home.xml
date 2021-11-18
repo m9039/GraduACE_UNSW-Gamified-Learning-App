@@ -21,6 +21,7 @@
             android:layout_marginRight="30dp"
             android:text="Mock \nAssessments"
             android:textSize="35sp"
+            android:textColor="#414141"
             android:textStyle="bold" />
 
         <Button
@@ -74,6 +75,7 @@
             android:text="Numerical Reasoning"
             android:textSize="24dp"
             android:textStyle="bold"
+            android:textColor="#414141"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintStart_toStartOf="@+id/tvNumericalMock"
             app:layout_constraintTop_toTopOf="parent" />
@@ -86,6 +88,7 @@
             android:layout_marginRight="33dp"
             android:text="Assesses your ability to handle and interpret numerical data to draw conclusions"
             android:textSize="17sp"
+            android:textColor="#414141"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.236"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -154,6 +157,7 @@
             android:text="Verbal Reasoning"
             android:textSize="24dp"
             android:textStyle="bold"
+            android:textColor="#414141"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintStart_toStartOf="@+id/tvVerbalMock"
             app:layout_constraintTop_toTopOf="parent" />
@@ -166,6 +170,7 @@
             android:layout_marginRight="33dp"
             android:text="Assesses your ability to understand and comprehend written passages"
             android:textSize="17sp"
+            android:textColor="#414141"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.254"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -233,6 +238,7 @@
             android:layout_marginTop="44dp"
             android:text="Logical Reasoning"
             android:textSize="24dp"
+            android:textColor="#414141"
             android:textStyle="bold"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintStart_toStartOf="@+id/tvLogicalMock"
@@ -246,6 +252,7 @@
             android:layout_marginRight="33dp"
             android:text="Measures your ability to deduce logical consequences or rules from given preconditions"
             android:textSize="17sp"
+            android:textColor="#414141"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.268"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -266,39 +273,6 @@
             app:layout_constraintVertical_bias="0.545" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-<!--    <Button-->
-<!--        android:id="@+id/btnConscientiousness"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="150dp"-->
-<!--        android:layout_marginLeft="30dp"-->
-<!--        android:layout_marginTop="30dp"-->
-<!--        android:layout_marginRight="30dp"-->
-<!--        android:background="@drawable/btn_round_corner"-->
-<!--        android:drawableLeft="@drawable/verbalmock"-->
-<!--        android:gravity="left"-->
-<!--        android:text="Verbal Reasoning"-->
-<!--        android:textAllCaps="false"-->
-<!--        android:textColor="@color/black"-->
-<!--        android:textSize="21sp"-->
-<!--        app:backgroundTint="@color/white" />-->
-
-<!--    <Button-->
-<!--        android:id="@+id/btnExtraversion"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="150dp"-->
-<!--        android:layout_marginLeft="30dp"-->
-<!--        android:layout_marginTop="30dp"-->
-<!--        android:layout_marginRight="30dp"-->
-<!--        android:background="@drawable/btn_round_corner"-->
-<!--        android:drawableLeft="@drawable/logicalmock"-->
-<!--        android:gravity="left"-->
-<!--        android:text="Logical Reasoning"-->
-<!--        android:textAllCaps="false"-->
-<!--        android:textColor="@color/black"-->
-<!--        android:textSize="21sp"-->
-<!--        app:backgroundTint="@color/white" />-->
 
 </LinearLayout>
 

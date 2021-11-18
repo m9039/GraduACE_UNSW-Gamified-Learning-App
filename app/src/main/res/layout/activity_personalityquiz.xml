@@ -26,6 +26,7 @@
         android:layout_marginRight="30dp"
         android:text="How OPEN are you?"
         android:textSize="32sp"
+        android:textColor="#414141"
         android:textStyle="bold" />
 
         <Button
@@ -69,6 +70,7 @@
         android:background="@drawable/btn_round_corner"
         android:backgroundTint="@color/white"
         android:elevation="10dp"
+        android:textColor="#414141"
         android:gravity="center"
         android:padding="10dp"
         android:text="QUIZ QUESTION"
@@ -102,6 +104,7 @@
             android:layout_gravity="start"
             android:gravity="center_horizontal"
             android:text="Strongly Disagree"
+            android:textColor="#414141"
             android:textSize="15sp"
             android:textStyle="bold" />
 
@@ -112,6 +115,7 @@
             android:layout_marginLeft="95dp"
             android:gravity="center_horizontal"
             android:text="Neutral"
+            android:textColor="#414141"
             android:textSize="15sp"
             android:textStyle="bold" />
 
@@ -121,6 +125,7 @@
             android:layout_marginLeft="95dp"
             android:gravity="center_horizontal"
             android:text="Strongly Agree"
+            android:textColor="#414141"
             android:textSize="15sp"
             android:textStyle="bold" />
     </LinearLayout>

@@ -38,6 +38,7 @@
                 android:layout_marginRight="30dp"
                 android:layout_marginTop="50dp"
                 android:textStyle="bold"
+                android:textColor="#414141"
                 android:text="What's your personality type?"
                 android:textSize="35sp"/>
 
@@ -48,6 +49,7 @@
                 android:layout_marginRight="30dp"
                 android:layout_marginTop="10dp"
                 android:textStyle="bold"
+                android:textColor="#414141"
                 android:text="Accurately measure your key personality traits"
                 android:textSize="22sp" />
 
@@ -60,6 +62,7 @@
                 android:background="@drawable/btn_round_corner"
                 android:backgroundTint="#F5E9D7"
                 android:padding="10dp"
+                android:textColor="#414141"
                 android:text="The Big Five Personality Test measures the five personality factors that psychologists have determined are core to our personality makeup. These Five Factors of personality are extraversion, agreeableness, openness, conscientiousness and neuroticism. "
                 android:textSize="18sp"
                 android:elevation="10dp"/>
@@ -76,8 +79,7 @@
                 android:gravity="left|center_vertical"
                 android:text="Openness"
                 android:textAllCaps="false"
-                android:textColor="@color/black"
-                android:textSize="22sp"
+                android:textColor="#414141"                android:textSize="22sp"
                 app:backgroundTint="@color/white" />
 
             <Button
@@ -92,8 +94,7 @@
                 android:gravity="left|center_vertical"
                 android:text="Conscientiousness"
                 android:textAllCaps="false"
-                android:textColor="@color/black"
-                android:textSize="22sp"
+                android:textColor="#414141"                android:textSize="22sp"
                 app:backgroundTint="@color/white" />
 
             <Button
@@ -108,8 +109,7 @@
                 android:gravity="left|center_vertical"
                 android:text="Extraversion"
                 android:textAllCaps="false"
-                android:textColor="@color/black"
-                android:textSize="22sp"
+                android:textColor="#414141"                android:textSize="22sp"
                 app:backgroundTint="@color/white" />
 
             <Button
@@ -124,8 +124,7 @@
                 android:gravity="left|center_vertical"
                 android:text="Agreeableness"
                 android:textAllCaps="false"
-                android:textColor="@color/black"
-                android:textSize="22sp"
+                android:textColor="#414141"                android:textSize="22sp"
                 app:backgroundTint="@color/white" />
 
             <Button
@@ -141,8 +140,7 @@
                 android:gravity="left|center_vertical"
                 android:text="Neuroticism"
                 android:textAllCaps="false"
-                android:textColor="@color/black"
-                android:textSize="22sp"
+                android:textColor="#414141"                android:textSize="22sp"
                 app:backgroundTint="@color/white" />
 
         </LinearLayout>

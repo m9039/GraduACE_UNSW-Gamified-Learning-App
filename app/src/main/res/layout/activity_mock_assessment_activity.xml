@@ -26,7 +26,8 @@
         android:layout_marginRight="30dp"
         android:text="Type of assessment"
         android:textSize="28sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:textColor="#414141"/>
 
         <Button
             android:id="@+id/ibMenu"
@@ -83,6 +84,7 @@
         android:elevation="10dp"
         android:gravity="center"
         android:padding="10dp"
+        android:textColor="#414141"
         android:text="@string/questions_string"
         android:textSize="16sp"
         android:textStyle="bold"/>
@@ -111,8 +113,7 @@
             android:layout_marginTop="10dp"
             android:backgroundTint="@color/white"
             android:text="A"
-            android:textColor="#646570"
-            android:textStyle="bold"
+            android:textColor="#414141"            android:textStyle="bold"
             app:strokeColor="#5F67C9"
             app:strokeWidth="2dp" />
 
@@ -124,8 +125,7 @@
             android:layout_marginTop="10dp"
             android:backgroundTint="@color/white"
             android:text="C"
-            android:textColor="#646570"
-            android:textStyle="bold"
+            android:textColor="#414141"            android:textStyle="bold"
             app:strokeColor="#5F67C9"
             app:strokeWidth="2dp" />
 
@@ -139,8 +139,7 @@
             android:layout_marginTop="10dp"
             android:backgroundTint="@color/white"
             android:text="B"
-            android:textColor="#646570"
-            android:textStyle="bold"
+            android:textColor="#414141"            android:textStyle="bold"
             app:strokeColor="#5F67C9"
             app:strokeWidth="2dp" />
 
@@ -152,8 +151,7 @@
             android:layout_marginTop="10dp"
             android:backgroundTint="@color/white"
             android:text="D"
-            android:textColor="#646570"
-            android:textStyle="bold"
+            android:textColor="#414141"            android:textStyle="bold"
             app:strokeColor="#5F67C9"
             app:strokeWidth="2dp" />
     </GridLayout>
