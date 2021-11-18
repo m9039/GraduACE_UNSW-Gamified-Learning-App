@@ -19,8 +19,9 @@ import java.util.ArrayList;
 public class MockAssessmentQActivity extends AppCompatActivity {
 
     private TextView tvQuestion, tvQuestionNumber, tvQuizTitle;
-    private String quizType, result, solution;
+    private String quizType, result;
     private Button btnOptionA, btnOptionB, btnOptionC, btnOptionD, btnNext, btnResults, btnSolution;
+    Button ibMenu;
     private TouchImageView ivImage;
     private ArrayList<MockAssessment> numericalQuizArrayList;
     private ArrayList<MockAssessment> verbalQuizArrayList;
@@ -46,6 +47,9 @@ public class MockAssessmentQActivity extends AppCompatActivity {
         numericalQuizArrayList = new ArrayList<>();
         verbalQuizArrayList = new ArrayList<>();
         logicalQuizArrayList = new ArrayList<>();
+        ibMenu = findViewById(R.id.ibMenu);
+
+        ibMenuClicked();
 
         Intent intent = getIntent();
         quizType = intent.getStringExtra("receiveQuiz");
@@ -392,5 +396,76 @@ public class MockAssessmentQActivity extends AppCompatActivity {
                 "✲ = ⌾\n" +
                 "If there are no star shapes there should be no circle shapes. If there are three star shapes, there should be three circle shapes. Option D is the only one that abides by this rule."));
         logicalQuizArrayList.add(new MockAssessment("Who can you infer is most likely to have taken the lemon cake?", R.drawable.logical5, "Maggie", "Susan", "Mark", "None",  "Mark", "Given what we have learned, it is reasonable to assume that Mark is the culprit. The facts about Maggie and Susan might help in forming a deductive argument, but in this context they are inconsequential. Mark’s pattern of behaviour indicates that he is guilty."));
+    }
+    private void ibMenuClicked() {
+        ibMenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showMenuScreen();
+            }
+        });
+    }
+
+    private void showMenuScreen() {
+        BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(MockAssessmentQActivity.this);
+        View bottomSheetView = LayoutInflater.from(getApplicationContext()).inflate(R.layout.menu, (LinearLayout)findViewById(R.id.llMenu));
+        Button btnClose = bottomSheetView.findViewById(R.id.btnClose);
+        Button btnHome = bottomSheetView.findViewById(R.id.btnHome);
+        Button btnPersonalityQuizzes = bottomSheetView.findViewById(R.id.btnPersonalityQuizzes);
+        Button btnMockAssessments = bottomSheetView.findViewById(R.id.btnMockAssessments);
+        Button btnJobSuggestions = bottomSheetView.findViewById(R.id.btnJobSuggestions);
+        Button btnResourceVideos = bottomSheetView.findViewById(R.id.btnResourceVideos);
+
+        btnClose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                bottomSheetDialog.dismiss();
+            }
+        });
+
+        btnHome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MockAssessmentQActivity.this, HomeActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btnPersonalityQuizzes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MockAssessmentQActivity.this, PersonalityHomeActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btnMockAssessments.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MockAssessmentQActivity.this, MockAssessHomeActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btnJobSuggestions.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MockAssessmentQActivity.this, JobHomeActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btnResourceVideos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MockAssessmentQActivity.this, ResourceHomeActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        //Cancels bottom sheet dialog when user clicks another part of the screen
+        bottomSheetDialog.setCancelable(false);
+        bottomSheetDialog.setContentView(bottomSheetView);
+        bottomSheetDialog.show();
     }
 }

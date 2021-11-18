@@ -27,7 +27,7 @@ public class HomeActivity extends AppCompatActivity {
 
     //NEED TO CHANGE THIS TO THE CORRECT CLASS
     public void goToJobSuggestions(View view){
-        Intent intent = new Intent (this, PersonalityHomeActivity.class);
+        Intent intent = new Intent (this, JobHomeActivity.class);
         startActivity(intent);
     }
 

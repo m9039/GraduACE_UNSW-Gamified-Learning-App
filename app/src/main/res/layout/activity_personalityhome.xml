@@ -8,14 +8,14 @@
     android:background="#DADCF1"
     tools:context=".PersonalityHomeActivity">
 
-    <ImageButton
+    <Button
         android:id="@+id/ibMenu"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_marginLeft="340dp"
         android:layout_marginTop="20dp"
-        android:backgroundTint="#00FF8837"
-        android:src="@drawable/ic_menu"
+        android:background="#00FF8837"
+        android:drawableTop="@drawable/ic_menu"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -73,7 +73,6 @@
                 android:layout_marginRight="30dp"
                 android:background="@drawable/btn_round_corner"
                 android:drawableLeft="@drawable/openness"
-                android:fontFamily="sans-serif-medium"
                 android:gravity="left|center_vertical"
                 android:text="Openness"
                 android:textAllCaps="false"

@@ -21,6 +21,7 @@ public class PersonalityQuizActivity extends AppCompatActivity {
     private TextView tvQuestion, tvQuestionNumber, tvQuizTitle;
     private String quizType, personalityDesc, personalityType, readMoreLink;
     private Button btnNext, btnResults;
+    Button ibMenu;
     private SeekBar seekbar;
     private ArrayList<PersonalityQuiz> opennessPersonalityQuizArrayList;
     private ArrayList<PersonalityQuiz> conscientiousnessPersonalityQuizArrayList;
@@ -45,6 +46,9 @@ public class PersonalityQuizActivity extends AppCompatActivity {
         extraversionPersonalityQuizArrayList = new ArrayList<>();
         agreeablenessPersonalityQuizArrayList = new ArrayList<>();
         neuroticismPersonalityQuizArrayList = new ArrayList<>();
+        ibMenu = findViewById(R.id.ibMenu);
+
+        ibMenuClicked();
 
         Intent intent = getIntent();
         quizType = intent.getStringExtra("receiveQuiz");
@@ -299,5 +303,77 @@ public class PersonalityQuizActivity extends AppCompatActivity {
         neuroticismPersonalityQuizArrayList.add(new PersonalityQuiz("I feel strong emotions when someone close to me is going away for a long time."));
         neuroticismPersonalityQuizArrayList.add(new PersonalityQuiz("In an emergency I would feel like panicking."));
         neuroticismPersonalityQuizArrayList.add(new PersonalityQuiz("I get very anxious when waiting to hear about an important decision."));
+    }
+
+    private void ibMenuClicked() {
+        ibMenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showMenuScreen();
+            }
+        });
+    }
+
+    private void showMenuScreen() {
+        BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(PersonalityQuizActivity.this);
+        View bottomSheetView = LayoutInflater.from(getApplicationContext()).inflate(R.layout.menu, (LinearLayout)findViewById(R.id.llMenu));
+        Button btnClose = bottomSheetView.findViewById(R.id.btnClose);
+        Button btnHome = bottomSheetView.findViewById(R.id.btnHome);
+        Button btnPersonalityQuizzes = bottomSheetView.findViewById(R.id.btnPersonalityQuizzes);
+        Button btnMockAssessments = bottomSheetView.findViewById(R.id.btnMockAssessments);
+        Button btnJobSuggestions = bottomSheetView.findViewById(R.id.btnJobSuggestions);
+        Button btnResourceVideos = bottomSheetView.findViewById(R.id.btnResourceVideos);
+
+        btnClose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                bottomSheetDialog.dismiss();
+            }
+        });
+
+        btnHome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(PersonalityQuizActivity.this, HomeActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btnPersonalityQuizzes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(PersonalityQuizActivity.this, PersonalityHomeActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btnMockAssessments.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(PersonalityQuizActivity.this, MockAssessHomeActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btnJobSuggestions.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(PersonalityQuizActivity.this, JobHomeActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btnResourceVideos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(PersonalityQuizActivity.this, ResourceHomeActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        //Cancels bottom sheet dialog when user clicks another part of the screen
+        bottomSheetDialog.setCancelable(false);
+        bottomSheetDialog.setContentView(bottomSheetView);
+        bottomSheetDialog.show();
     }
 }

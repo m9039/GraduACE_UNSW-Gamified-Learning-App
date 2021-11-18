@@ -3,19 +3,24 @@ package au.edu.unsw.infs3634.unswgamifiedlearningapp;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer;
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.AbstractYouTubePlayerListener;
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView;
 
 public class ResourceDetailActivity extends AppCompatActivity {
     private YouTubePlayerView youTubePlayerView;
+    Button ibMenu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +43,10 @@ public class ResourceDetailActivity extends AppCompatActivity {
         ImageView picture = findViewById(R.id.ivPicture);
         picture.setImageResource(video.getPicture());
 
+        ibMenu = findViewById(R.id.ibMenu);
+
+        ibMenuClicked();
+
         //youtube player function-reference: https://github.com/PierfrancescoSoffritti/android-youtube-player
         //embedded youtube video into resourcedetailactivity
         youTubePlayerView = findViewById(R.id.activity_youtubePlayerView);
@@ -53,6 +62,78 @@ public class ResourceDetailActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    private void ibMenuClicked() {
+        ibMenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showMenuScreen();
+            }
+        });
+    }
+
+    private void showMenuScreen() {
+        BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(ResourceDetailActivity.this);
+        View bottomSheetView = LayoutInflater.from(getApplicationContext()).inflate(R.layout.menu, (LinearLayout)findViewById(R.id.llMenu));
+        Button btnClose = bottomSheetView.findViewById(R.id.btnClose);
+        Button btnHome = bottomSheetView.findViewById(R.id.btnHome);
+        Button btnPersonalityQuizzes = bottomSheetView.findViewById(R.id.btnPersonalityQuizzes);
+        Button btnMockAssessments = bottomSheetView.findViewById(R.id.btnMockAssessments);
+        Button btnJobSuggestions = bottomSheetView.findViewById(R.id.btnJobSuggestions);
+        Button btnResourceVideos = bottomSheetView.findViewById(R.id.btnResourceVideos);
+
+        btnClose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                bottomSheetDialog.dismiss();
+            }
+        });
+
+        btnHome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ResourceDetailActivity.this, HomeActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btnPersonalityQuizzes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ResourceDetailActivity.this, PersonalityHomeActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btnMockAssessments.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ResourceDetailActivity.this, MockAssessHomeActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btnJobSuggestions.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ResourceDetailActivity.this, JobHomeActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btnResourceVideos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ResourceDetailActivity.this, ResourceHomeActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        //Cancels bottom sheet dialog when user clicks another part of the screen
+        bottomSheetDialog.setCancelable(false);
+        bottomSheetDialog.setContentView(bottomSheetView);
+        bottomSheetDialog.show();
     }
 }
 

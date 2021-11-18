@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/llMenu">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/btnClose"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:background="#00FFFFFF"
+            android:drawableTop="@drawable/ic_close"
+            app:layout_constraintEnd_toEndOf="@+id/linearLayout"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#5F68C3"
+            android:orientation="vertical"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <Button
+                android:id="@+id/btnHome"
+                android:layout_width="190dp"
+                android:layout_height="200dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dp"
+                android:background="#00FFFFFF"
+                android:drawableTop="@drawable/home_large"
+                android:fontFamily="sans-serif-medium"
+                android:paddingTop="15dp"
+                android:text="HOME"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="27sp" />
+
+            <Button
+                android:id="@+id/btnPersonalityQuizzes"
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:layout_marginLeft="30dp"
+                android:paddingLeft="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="30dp"
+                android:background="@drawable/btn_round_corner"
+                android:drawableLeft="@drawable/innovation"
+                android:gravity="left|center_vertical"
+                android:text=" Personality Quizzes"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:textSize="22sp"
+                app:backgroundTint="@color/white" />
+
+            <Button
+                android:id="@+id/btnMockAssessments"
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:paddingLeft="10dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="30dp"
+                android:background="@drawable/btn_round_corner"
+                android:drawableLeft="@drawable/homework"
+                android:gravity="left|center_vertical"
+                android:text=" Mock Assessments"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:textSize="22sp"
+                app:backgroundTint="@color/white" />
+
+            <Button
+                android:id="@+id/btnJobSuggestions"
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:paddingLeft="10dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="30dp"
+                android:background="@drawable/btn_round_corner"
+                android:drawableLeft="@drawable/briefcase"
+                android:gravity="left|center_vertical"
+                android:text=" Job Suggestions"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:textSize="22sp"
+                app:backgroundTint="@color/white" />
+
+            <Button
+                android:id="@+id/btnResourceVideos"
+                android:layout_width="match_parent"
+                android:layout_height="95dp"
+                android:paddingLeft="10dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginBottom="40dp"
+                android:background="@drawable/btn_round_corner"
+                android:drawableLeft="@drawable/videocall"
+                android:gravity="left|center_vertical"
+                android:text=" Resource Videos"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:textSize="22sp"
+                app:backgroundTint="@color/white" />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>
