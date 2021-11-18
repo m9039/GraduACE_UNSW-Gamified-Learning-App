@@ -7,6 +7,17 @@
     android:background="@color/bg_purple"
     tools:context=".ResourceDetailActivity">
 
+    <ImageButton
+        android:id="@+id/ibMenu"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="340dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#00FF8837"
+        android:src="@drawable/ic_menu"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/imageView"
         android:layout_width="373dp"

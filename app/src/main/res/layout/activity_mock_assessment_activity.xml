@@ -11,10 +11,16 @@
     android:orientation="vertical"
     tools:context=".MockAssessmentQActivity">
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
     <TextView
         android:id="@+id/tvQuizTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         android:layout_marginLeft="30dp"
         android:layout_marginTop="50dp"
         android:layout_marginRight="30dp"
@@ -22,6 +28,18 @@
         android:textSize="28sp"
         android:textStyle="bold" />
 
+        <ImageButton
+            android:id="@+id/ibMenu"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="340dp"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="#00FF8837"
+            android:src="@drawable/ic_menu"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
         android:id="@+id/tvQuestionNumber"
@@ -66,7 +84,8 @@
         android:gravity="center"
         android:padding="10dp"
         android:text="@string/questions_string"
-        android:textSize="17sp" />
+        android:textSize="16sp"
+        android:textStyle="bold"/>
 
 <!--    zoom feature to enable better readability of imageviews-->
     <com.ortiz.touchview.TouchImageView

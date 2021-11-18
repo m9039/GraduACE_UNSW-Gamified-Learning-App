@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,128 +8,145 @@
     android:background="#DADCF1"
     tools:context=".PersonalityHomeActivity">
 
-    <LinearLayout
-        android:layout_width="wrap_content"
+    <ImageButton
+        android:id="@+id/ibMenu"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="340dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#00FF8837"
+        android:src="@drawable/ic_menu"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/tvQuizTitle"
-            android:layout_width="match_parent"
+        <LinearLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
-            android:layout_marginTop="50dp"
-            android:textStyle="bold"
-            android:text="What's your personality type?"
-            android:textSize="35sp"/>
+            android:orientation="vertical">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
-            android:layout_marginTop="10dp"
-            android:textStyle="bold"
-            android:text="Accurately measure your key personality traits"
-            android:textSize="22sp" />
+            <TextView
+                android:id="@+id/tvQuizTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="50dp"
+                android:textStyle="bold"
+                android:text="What's your personality type?"
+                android:textSize="35sp"/>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginRight="30dp"
-            android:background="@drawable/btn_round_corner"
-            android:backgroundTint="#F5E9D7"
-            android:padding="10dp"
-            android:text="The Big Five Personality Test measures the five personality factors that psychologists have determined are core to our personality makeup. These Five Factors of personality are extraversion, agreeableness, openness, conscientiousness and neuroticism. "
-            android:textSize="18sp"
-            android:elevation="10dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="10dp"
+                android:textStyle="bold"
+                android:text="Accurately measure your key personality traits"
+                android:textSize="22sp" />
 
-        <Button
-            android:id="@+id/btnOpenness"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginRight="30dp"
-            android:background="@drawable/btn_round_corner"
-            android:drawableLeft="@drawable/openness"
-            android:fontFamily="sans-serif-medium"
-            android:gravity="left|center_vertical"
-            android:text="Openness"
-            android:textAllCaps="false"
-            android:textColor="@color/black"
-            android:textSize="22sp"
-            app:backgroundTint="@color/white" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="30dp"
+                android:background="@drawable/btn_round_corner"
+                android:backgroundTint="#F5E9D7"
+                android:padding="10dp"
+                android:text="The Big Five Personality Test measures the five personality factors that psychologists have determined are core to our personality makeup. These Five Factors of personality are extraversion, agreeableness, openness, conscientiousness and neuroticism. "
+                android:textSize="18sp"
+                android:elevation="10dp"/>
 
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:id="@+id/btnConscientiousness"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginRight="30dp"
-            android:background="@drawable/btn_round_corner"
-            android:drawableLeft="@drawable/conscientiousness"
-            android:gravity="left|center_vertical"
-            android:text="Conscientiousness"
-            android:textAllCaps="false"
-            android:textColor="@color/black"
-            android:textSize="22sp"
-            app:backgroundTint="@color/white" />
+            <Button
+                android:id="@+id/btnOpenness"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="30dp"
+                android:background="@drawable/btn_round_corner"
+                android:drawableLeft="@drawable/openness"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="left|center_vertical"
+                android:text="Openness"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:textSize="22sp"
+                app:backgroundTint="@color/white" />
 
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:id="@+id/btnExtraversion"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginRight="30dp"
-            android:background="@drawable/btn_round_corner"
-            android:drawableLeft="@drawable/extraversion"
-            android:gravity="left|center_vertical"
-            android:text="Extraversion"
-            android:textAllCaps="false"
-            android:textColor="@color/black"
-            android:textSize="22sp"
-            app:backgroundTint="@color/white" />
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:id="@+id/btnConscientiousness"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="30dp"
+                android:background="@drawable/btn_round_corner"
+                android:drawableLeft="@drawable/conscientiousness"
+                android:gravity="left|center_vertical"
+                android:text="Conscientiousness"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:textSize="22sp"
+                app:backgroundTint="@color/white" />
 
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:id="@+id/btnAgreeableness"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginRight="30dp"
-            android:background="@drawable/btn_round_corner"
-            android:drawableLeft="@drawable/agreeableness"
-            android:gravity="left|center_vertical"
-            android:text="Agreeableness"
-            android:textAllCaps="false"
-            android:textColor="@color/black"
-            android:textSize="22sp"
-            app:backgroundTint="@color/white" />
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:id="@+id/btnExtraversion"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="30dp"
+                android:background="@drawable/btn_round_corner"
+                android:drawableLeft="@drawable/extraversion"
+                android:gravity="left|center_vertical"
+                android:text="Extraversion"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:textSize="22sp"
+                app:backgroundTint="@color/white" />
 
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:id="@+id/btnNeuroticism"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginRight="30dp"
-            android:layout_margin="30dp"
-            android:background="@drawable/btn_round_corner"
-            android:drawableLeft="@drawable/neurotisicm"
-            android:gravity="left|center_vertical"
-            android:text="Neuroticism"
-            android:textAllCaps="false"
-            android:textColor="@color/black"
-            android:textSize="22sp"
-            app:backgroundTint="@color/white" />
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:id="@+id/btnAgreeableness"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="30dp"
+                android:background="@drawable/btn_round_corner"
+                android:drawableLeft="@drawable/agreeableness"
+                android:gravity="left|center_vertical"
+                android:text="Agreeableness"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:textSize="22sp"
+                app:backgroundTint="@color/white" />
 
-    </LinearLayout>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:id="@+id/btnNeuroticism"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_margin="30dp"
+                android:background="@drawable/btn_round_corner"
+                android:drawableLeft="@drawable/neurotisicm"
+                android:gravity="left|center_vertical"
+                android:text="Neuroticism"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:textSize="22sp"
+                app:backgroundTint="@color/white" />
 
-</ScrollView>
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
 

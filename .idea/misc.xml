@@ -3,12 +3,6 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/jasmi/StudioProjects/unsw-gamified-learning-app-group-40/app/src/main/res/layout/activity_mock_assess_home.xml" value="0.2957427536231884" />
-        <entry key="..\:/Users/jasmi/StudioProjects/unsw-gamified-learning-app-group-40/app/src/main/res/layout/activity_mock_assessment_activity.xml" value="0.2957427536231884" />
-        <entry key="..\:/Users/jasmi/StudioProjects/unsw-gamified-learning-app-group-40/app/src/main/res/layout/activity_resourcedetail.xml" value="0.2957427536231884" />
-        <entry key="..\:/Users/jasmi/StudioProjects/unsw-gamified-learning-app-group-40/app/src/main/res/layout/activity_resourcehome.xml" value="0.2957427536231884" />
-        <entry key="..\:/Users/jasmi/StudioProjects/unsw-gamified-learning-app-group-40/app/src/main/res/layout/mock_assessment_result.xml" value="0.2957427536231884" />
-        <entry key="..\:/Users/jasmi/StudioProjects/unsw-gamified-learning-app-group-40/app/src/main/res/layout/solutions_popup.xml" value="0.2957427536231884" />
         <entry key="app/src/main/res/drawable/btn_round_corner.xml" value="0.2994791666666667" />
         <entry key="app/src/main/res/drawable/seek_bar.xml" value="0.2994791666666667" />
         <entry key="app/src/main/res/drawable/seek_bar_thumb.xml" value="0.2948717948717949" />
@@ -17,9 +11,10 @@
         <entry key="app/src/main/res/layout/activity_mock_assess_home.xml" value="0.2833333333333333" />
         <entry key="app/src/main/res/layout/activity_mock_assessment.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_mock_assessment_activity.xml" value="0.45" />
-        <entry key="app/src/main/res/layout/activity_personalityhome.xml" value="0.13779128672745694" />
+        <entry key="app/src/main/res/layout/activity_personalityhome.xml" value="0.26991565135895035" />
         <entry key="app/src/main/res/layout/activity_personalityquiz.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_register.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_resourcedetail.xml" value="0.15" />
         <entry key="app/src/main/res/layout/activity_resourcehome.xml" value="0.335" />
         <entry key="app/src/main/res/layout/activity_signUp.xml" value="0.1" />
         <entry key="app/src/main/res/layout/mock_assessment_result.xml" value="0.24139492753623187" />
