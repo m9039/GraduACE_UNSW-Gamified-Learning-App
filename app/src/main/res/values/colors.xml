@@ -13,4 +13,8 @@
     <color name="red">#E87C74</color>
     <color name="green">#8DD18F</color>
     <color name="fontColor">#414141</color>
+    <color name="colour1">#DADCF1</color>
+    <color name="colour2">#DADCF1</color>
+    <color name="colour3">#DADCF1</color>
+    <color name="colour4">#DADCF1</color>
 </resources>

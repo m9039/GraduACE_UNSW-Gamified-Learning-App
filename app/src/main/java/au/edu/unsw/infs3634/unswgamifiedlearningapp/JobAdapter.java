@@ -11,21 +11,21 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager.widget.PagerAdapter;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.List;
 
-import au.edu.unsw.infs3634.unswgamifiedlearningapp.Video;
+public class JobAdapter extends RecyclerView.Adapter<JobAdapter.MyViewHolder> implements Filterable {
+    public ArrayList<Job> mJobs;
+    public ArrayList<Job> mJobsFiltered;
+    public JobAdapter.ClickListener listener;
 
-public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.MyViewHolder> implements Filterable {
-    public ArrayList<Video> mVideo;
-    public ArrayList<Video> mVideoFiltered;
-    public ClickListener listener;
-
-    public VideoAdapter(Context context, ArrayList<Video> mVideo, ClickListener listener) {
-        this.mVideo = mVideo;
-        this.mVideoFiltered = mVideo;
+    public JobAdapter(Context context, ArrayList<Job> mJobs, JobAdapter.ClickListener listener) {
+        this.mJobs = mJobs;
+        this.mJobsFiltered = mJobs;
         this.listener = listener;
     }
     //filters list by name
@@ -37,40 +37,40 @@ public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.MyViewHolder
                 //if empty returns the original list
                 String charString = constraint.toString();
                 if(charString.isEmpty()) {
-                    mVideoFiltered = mVideo;
+                    mJobsFiltered = mJobs;
                 } else {
-                    ArrayList<Video> filteredList = new ArrayList<>();
-                    for (Video video : mVideo) {
+                    ArrayList<Job> filteredList = new ArrayList<>();
+                    for (Job jobs : mJobs) {
                         //compares search bar characters against details of songs
-                        if(video.getName().toLowerCase().contains(charString.toLowerCase())) {
-                            filteredList.add(video);
+                        if(jobs.getJobName().toLowerCase().contains(charString.toLowerCase())) {
+                            filteredList.add(jobs);
                         }
                     }
-                    mVideoFiltered = filteredList;
+                    mJobsFiltered = filteredList;
                 }
                 FilterResults filterResults = new FilterResults();
-                filterResults.values = mVideoFiltered;
+                filterResults.values = mJobsFiltered;
                 return filterResults;
             }
 
             @Override
             protected void publishResults(CharSequence charSequence, FilterResults results) {
-                mVideoFiltered = (ArrayList<Video>) results.values;
+                mJobsFiltered = (ArrayList<Job>) results.values;
                 notifyDataSetChanged();
             }
         };
     }
 
     class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-        public TextView name;
-        public ImageView picture;
-        ClickListener listener;
-        final VideoAdapter mAdapter;
+        public TextView category;
+        public ImageView icon;
+        JobAdapter.ClickListener listener;
+        final JobAdapter mAdapter;
 
-        public MyViewHolder(@NonNull View itemView, VideoAdapter mAdapter, ClickListener listener) {
+        public MyViewHolder(@NonNull View itemView, JobAdapter mAdapter, JobAdapter.ClickListener listener) {
             super(itemView);
-            name = itemView.findViewById(R.id.pName);
-            picture = itemView.findViewById(R.id.pResourcePic);
+            icon = itemView.findViewById(R.id.pIcon);
+            category = itemView.findViewById(R.id.pCategory);
             this.mAdapter = mAdapter;
             this.listener = listener;
             itemView.setOnClickListener(this);
@@ -82,15 +82,15 @@ public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.MyViewHolder
 
     //sort method
     public void sort(final int sortMethod) {
-        if(mVideoFiltered.size() > 0) {
-            Collections.sort(mVideoFiltered, new Comparator<Video>() {
+        if(mJobsFiltered.size() > 0) {
+            Collections.sort(mJobsFiltered, new Comparator<Job>() {
                 @Override
-                public int compare(Video o1, Video o2) {
+                public int compare(Job o1, Job o2) {
                     if (sortMethod == 1) {
-                        return o1.getName().compareTo(o2.getName()); //sorts by video name
+                        return o1.getJobName().compareTo(o2.getJobName()); //sorts by job name
                     }
-                    // if they did not put anything it will sort by video name
-                    return o1.getName().compareTo(o2.getName());
+                    // if they did not put anything it will sort by job name
+                    return o1.getJobName().compareTo(o2.getJobName());
                 }
             });
         }
@@ -103,24 +103,27 @@ public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.MyViewHolder
     //inflate the row layout from xml when needed (just the view, no data)
     @NonNull
     @Override
-    public VideoAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.resource_item_row, parent, false);
-        return new MyViewHolder(view, this, listener);
+    public JobAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.job_item_row, parent, false);
+        return new JobAdapter.MyViewHolder(view, this, listener);
     }
 
     //binds the data to the TextView Elements in each row
     @Override
-    public void onBindViewHolder(@NonNull VideoAdapter.MyViewHolder holder, int position) {
-        Video video = mVideoFiltered.get(position);
-        holder.name.setText(video.getName());
-        holder.picture.setImageResource(video.getPicture());
+    public void onBindViewHolder(@NonNull JobAdapter.MyViewHolder holder, int position) {
+        Job jobs = mJobsFiltered.get(position);
+        holder.category.setText(jobs.getCategory());
+        holder.icon.setImageResource(jobs.getIcon());
 
 
     }
 
     @Override
     public int getItemCount() {
-        return mVideoFiltered.size();
+        return mJobsFiltered.size();
     }
 
 }
+
+
+

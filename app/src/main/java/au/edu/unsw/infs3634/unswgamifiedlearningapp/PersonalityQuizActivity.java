@@ -202,7 +202,7 @@ public class PersonalityQuizActivity extends AppCompatActivity {
         btnRecommend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(PersonalityQuizActivity.this, PersonalityHomeActivity.class);
+                Intent intent = new Intent(PersonalityQuizActivity.this, JobHomeActivity.class);
                 startActivity(intent);
                 bottomSheetDialog.dismiss();
             }

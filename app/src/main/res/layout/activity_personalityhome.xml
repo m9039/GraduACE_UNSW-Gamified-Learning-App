@@ -61,11 +61,11 @@
                 android:layout_marginRight="30dp"
                 android:background="@drawable/btn_round_corner"
                 android:backgroundTint="#F5E9D7"
+                android:elevation="10dp"
                 android:padding="10dp"
                 android:textColor="#414141"
                 android:text="The Big Five Personality Test measures the five personality factors that psychologists have determined are core to our personality makeup. These Five Factors of personality are extraversion, agreeableness, openness, conscientiousness and neuroticism. "
-                android:textSize="18sp"
-                android:elevation="10dp"/>
+                android:textSize="18sp" />
 
             <Button
                 android:id="@+id/btnOpenness"
