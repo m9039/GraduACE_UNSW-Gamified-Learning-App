@@ -3,6 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/jasmi/StudioProjects/unsw-gamified-learning-app-group-40/app/src/main/res/layout/activity_mock_assess_home.xml" value="0.2957427536231884" />
+        <entry key="..\:/Users/jasmi/StudioProjects/unsw-gamified-learning-app-group-40/app/src/main/res/layout/activity_mock_assessment_activity.xml" value="0.2957427536231884" />
+        <entry key="..\:/Users/jasmi/StudioProjects/unsw-gamified-learning-app-group-40/app/src/main/res/layout/activity_resourcedetail.xml" value="0.2957427536231884" />
+        <entry key="..\:/Users/jasmi/StudioProjects/unsw-gamified-learning-app-group-40/app/src/main/res/layout/activity_resourcehome.xml" value="0.2957427536231884" />
+        <entry key="..\:/Users/jasmi/StudioProjects/unsw-gamified-learning-app-group-40/app/src/main/res/layout/mock_assessment_result.xml" value="0.2957427536231884" />
+        <entry key="..\:/Users/jasmi/StudioProjects/unsw-gamified-learning-app-group-40/app/src/main/res/layout/solutions_popup.xml" value="0.2957427536231884" />
         <entry key="app/src/main/res/drawable/btn_round_corner.xml" value="0.2994791666666667" />
         <entry key="app/src/main/res/drawable/seek_bar.xml" value="0.2994791666666667" />
         <entry key="app/src/main/res/drawable/seek_bar_thumb.xml" value="0.2948717948717949" />

@@ -7,16 +7,17 @@
     android:background="@color/bg_purple"
     tools:context=".ResourceDetailActivity">
 
-    <ImageView
+    <TextView
         android:id="@+id/imageView"
         android:layout_width="373dp"
         android:layout_height="509dp"
+        android:background="@drawable/btn_round_corner"
+        android:elevation="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.716"
-        app:srcCompat="@drawable/btn_round_corner" />
+        app:layout_constraintVertical_bias="0.716" />
 
     <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
         android:id="@+id/activity_youtubePlayerView"
@@ -24,6 +25,7 @@
         android:layout_height="200dp"
         android:layout_marginStart="13dp"
         android:layout_marginEnd="10dp"
+        android:elevation="10dp"
         app:layout_constraintBottom_toBottomOf="@+id/imageView"
         app:layout_constraintEnd_toEndOf="@+id/imageView"
         app:layout_constraintHorizontal_bias="0.0"
@@ -40,6 +42,7 @@
         android:layout_height="91dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="48dp"
+        android:elevation="10dp"
         android:text="CV/Resume Best Practices"
         android:textColor="#414141"
         android:textSize="32sp"
@@ -53,6 +56,7 @@
         android:layout_height="123dp"
         android:layout_marginStart="5dp"
         android:layout_marginTop="28dp"
+        android:elevation="10dp"
         android:text="@string/description"
         android:textAlignment="viewStart"
         android:textSize="18sp"
@@ -67,6 +71,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
         android:layout_marginTop="84dp"
+        android:elevation="10dp"
         android:text="Source: StandOutCV"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="@+id/tvDesc"
@@ -78,6 +83,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="52dp"
         android:layout_marginEnd="20dp"
+        android:elevation="10dp"
         app:layout_constraintEnd_toEndOf="@+id/imageView"
         app:layout_constraintTop_toBottomOf="@+id/tvDesc"
         app:srcCompat="@drawable/reading" />

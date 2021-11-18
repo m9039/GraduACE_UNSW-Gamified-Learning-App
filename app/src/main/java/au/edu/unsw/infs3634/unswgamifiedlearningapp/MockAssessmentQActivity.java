@@ -374,7 +374,7 @@ public class MockAssessmentQActivity extends AppCompatActivity {
         verbalQuizArrayList.add(new MockAssessment("", R.drawable.verbal1, "A", "B", "C", "D", "D", "Work-life balance schemes in the workplace have been applauded by employees and increase morale and motivation at work."));
         verbalQuizArrayList.add(new MockAssessment("", R.drawable.verbal2, "A", "B", "C", "D", "D", "No cuts are required "));
         verbalQuizArrayList.add(new MockAssessment("Please select a pair of words that have a similar relationship", R.drawable.verbal3, "A", "B", "C", "D",  "B", "tree : paper"));
-        verbalQuizArrayList.add(new MockAssessment("", R.drawable.verbal4, "A", "B", "C", "",  "B", "False"));
+        verbalQuizArrayList.add(new MockAssessment("", R.drawable.verbal4, "A", "B", "C", "D",  "B", "False"));
         verbalQuizArrayList.add(new MockAssessment("Please identify which type of error appears in the sentence below: ", R.drawable.verbal5, "A", "B", "C", "D",  "A", "Grammar"));
     }
 
