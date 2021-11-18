@@ -51,6 +51,7 @@
                     android:layout_marginBottom="10dp"
                     android:gravity="left"
                     android:text="Resources"
+                    android:textColor="@color/fontColor"
                     android:textSize="30sp"
                     android:textStyle="bold" />
 
