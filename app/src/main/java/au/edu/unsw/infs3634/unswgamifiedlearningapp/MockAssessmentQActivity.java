@@ -12,6 +12,8 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
+import com.ortiz.touchview.TouchImageView;
+
 import java.util.ArrayList;
 
 public class MockAssessmentQActivity extends AppCompatActivity {
@@ -19,7 +21,7 @@ public class MockAssessmentQActivity extends AppCompatActivity {
     private TextView tvQuestion, tvQuestionNumber, tvQuizTitle;
     private String quizType, result, solution;
     private Button btnOptionA, btnOptionB, btnOptionC, btnOptionD, btnNext, btnResults, btnSolution;
-    private ImageView ivImage;
+    private TouchImageView ivImage;
     private ArrayList<MockAssessment> numericalQuizArrayList;
     private ArrayList<MockAssessment> verbalQuizArrayList;
     private ArrayList<MockAssessment> logicalQuizArrayList;
@@ -90,6 +92,8 @@ public class MockAssessmentQActivity extends AppCompatActivity {
                 btnOptionB.setBackgroundColor(getColor(R.color.white));
                 btnOptionC.setBackgroundColor(getColor(R.color.white));
                 btnOptionD.setBackgroundColor(getColor(R.color.white));
+
+                ivImage.resetZoom();
 
                 if (currentArrayPosition == 4){
                     btnNext.setVisibility(View.GONE);

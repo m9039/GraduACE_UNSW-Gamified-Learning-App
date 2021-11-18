@@ -3,6 +3,7 @@ package au.edu.unsw.infs3634.unswgamifiedlearningapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,7 +19,7 @@ import java.util.ArrayList;
 public class PersonalityQuizActivity extends AppCompatActivity {
 
     private TextView tvQuestion, tvQuestionNumber, tvQuizTitle;
-    private String quizType, personalityType;
+    private String quizType, personalityDesc, personalityType, readMoreLink;
     private Button btnNext, btnResults;
     private SeekBar seekbar;
     private ArrayList<PersonalityQuiz> opennessPersonalityQuizArrayList;
@@ -105,33 +106,61 @@ public class PersonalityQuizActivity extends AppCompatActivity {
                         public void onClick(View v) {
                             if (quizType.equals("Openness")){
                                 if (currentScore >= 25 ){
-                                    personalityType = "You are more likely to be curious, have a wide range of interests and a strong sense of independence.";
+                                    personalityDesc = "You are more likely to be curious, have a wide range of interests and a strong sense of independence.";
+                                    personalityType ="High Openness";
+                                    readMoreLink ="https://www.crystalknows.com/big-five/openness";
                                 } else {
-                                    personalityType = "You are more likely to be practical, conventional and prefer to stick to a routine.";
+                                    personalityDesc = "You are more likely to be practical, conventional and prefer to stick to a routine.";
+                                    personalityType ="Low Openness";
+                                    readMoreLink ="https://www.crystalknows.com/big-five/openness";
                                 }
                             } else if (quizType.equals("Conscientiousness")){
                                 if (currentScore >= 25 ){
-                                    personalityType = "You are more likely to be hard-working, dependable or organised.";
+                                    personalityDesc = "You are more likely to be hard-working, dependable or organised.";
+                                    personalityType ="High Conscientiousness";
+                                    readMoreLink ="https://www.crystalknows.com/big-five/conscientiousness";
+
                                 } else {
-                                    personalityType = "You are more likely to be impulsive, careless or disorganised.";
+                                    personalityDesc = "You are more likely to be impulsive, careless or disorganised.";
+                                    personalityType ="Low Conscientiousness";
+                                    readMoreLink ="https://www.crystalknows.com/big-five/conscientiousness";
+
                                 }
                             } else if (quizType.equals("Extraversion")){
                                 if (currentScore >= 25 ){
-                                    personalityType = "You are more likely to be outgoing, social and enjoys seeking adventure.";
+                                    personalityDesc = "You are more likely to be outgoing, social and enjoys seeking adventure.";
+                                    personalityType ="High Extraversion";
+                                    readMoreLink ="https://www.crystalknows.com/big-five/extroversion";
+
                                 } else {
-                                    personalityType = "You are more likely to be quiet, reserved or withdrawn in social situations.";
+                                    personalityDesc = "You are more likely to be quiet, reserved or withdrawn in social situations.";
+                                    personalityType ="Low Extraversion";
+                                    readMoreLink ="https://www.crystalknows.com/big-five/extroversion";
+
                                 }
                             } else if (quizType.equals("Agreeableness")){
                                 if (currentScore >= 25 ){
-                                    personalityType = " You are more likely to be helpful, trusting and empathetic.";
+                                    personalityDesc = " You are more likely to be helpful, trusting and empathetic.";
+                                    personalityType ="High Agreeableness";
+                                    readMoreLink ="https://www.crystalknows.com/big-five/agreeableness";
+
                                 } else {
-                                    personalityType = "You are more likely to be critical, uncooperative or suspicious.";
+                                    personalityDesc = "You are more likely to be critical, uncooperative or suspicious.";
+                                    personalityType ="Low Agreeableness";
+                                    readMoreLink ="https://www.crystalknows.com/big-five/agreeableness";
+
                                 }
                             } else if (quizType.equals("Neuroticism")){
                                 if (currentScore >= 25 ){
-                                    personalityType = "You are more likely to be anxious, unhappy or prone to negative emotions.";
+                                    personalityDesc = "You are more likely to be anxious, unhappy or prone to negative emotions.";
+                                    personalityType ="High Neuroticism";
+                                    readMoreLink ="https://www.crystalknows.com/big-five/neuroticism";
+
                                 } else {
-                                    personalityType = "You are more likely to be calm, even-tempered and secure.";
+                                    personalityDesc = "You are more likely to be calm, even-tempered and secure.";
+                                    personalityType ="Low Neuroticism";
+                                    readMoreLink ="https://www.crystalknows.com/big-five/neuroticism";
+
                                 }
                             }
                             showResultBottomScreen();
@@ -151,8 +180,31 @@ public class PersonalityQuizActivity extends AppCompatActivity {
         BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(PersonalityQuizActivity.this);
         View bottomSheetView = LayoutInflater.from(getApplicationContext()).inflate(R.layout.personality_result, (LinearLayout)findViewById(R.id.llResult));
         TextView tvPersonalityResult = bottomSheetView.findViewById(R.id.tvMockAssessResult);
+        tvPersonalityResult.setText(personalityDesc);
+
+        TextView tvReadMore = bottomSheetView.findViewById(R.id.tvReadMore);
+        tvReadMore.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(readMoreLink));
+                startActivity(intent);
+            }
+        });
+
+        TextView tvMockAssessType =bottomSheetView.findViewById(R.id.tvMockAssessType);
+        tvMockAssessType.setText(personalityType);
+
+        Button btnRecommend = bottomSheetView.findViewById(R.id.btnRecommend);
+        btnRecommend.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(PersonalityQuizActivity.this, PersonalityHomeActivity.class);
+                startActivity(intent);
+                bottomSheetDialog.dismiss();
+            }
+        });
+
         Button btnReturnToQuizzes = bottomSheetView.findViewById(R.id.btnReturnToQuizzes);
-        tvPersonalityResult.setText(personalityType);
         btnReturnToQuizzes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

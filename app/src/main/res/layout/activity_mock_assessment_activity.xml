@@ -87,7 +87,7 @@
         android:textSize="16sp"
         android:textStyle="bold"/>
 
-<!--    zoom feature to enable better readability of imageviews-->
+<!--    zoom feature to enable better readability of imageViews-->
     <com.ortiz.touchview.TouchImageView
         android:id="@+id/ivImage"
         android:layout_width="match_parent"

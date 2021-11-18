@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">UNSW Gamified Learning App</string>
     <string name="description">A strong CV is crucial if you want to land interviews for the best jobs, so this video breaks down the CV writing process into simple steps.</string>
+    <string name="personality_desc">You are more likely to be curious, have a wide range of interests and a strong sense of independence.</string>
+    <string name="read_more"><u>Read More</u></string>
     <string name="questions_string">A Flume, a Rouser and a Lior car are driven around a test track for 450 miles. How much CO2, to the nearest kg, is emitted by the three cars? (1.61 km = 1 mile)?</string>
 </resources>

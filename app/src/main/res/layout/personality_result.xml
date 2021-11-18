@@ -1,35 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/llResult"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:id="@+id/llResult">
+    android:layout_height="260dp"
+    android:orientation="vertical">
 
     <TextView
+        android:id="@+id/tvMockAssessType"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/tvMockAssessResult"
-        android:textSize="20sp"
-        android:textAllCaps="false"
-        android:textAlignment="center"
-        android:gravity="center"
         android:layout_margin="30dp"
+        android:gravity="center"
+        android:text="High Openness"
+        android:textAlignment="center"
+        android:textAllCaps="false"
 
-        android:textStyle="bold"
         android:textColor="#5F68C3"
-        android:text="Personality type:"/>
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvMockAssessResult"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:gravity="center"
+
+        android:text="@string/personality_desc"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="#5F68C3"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/tvMockAssessType"
+        app:layout_constraintTop_toBottomOf="@+id/tvMockAssessType" />
 
     <Button
-        android:layout_width="270dp"
-        android:layout_height="wrap_content"
         android:id="@+id/btnReturnToQuizzes"
-        android:layout_gravity="center_horizontal"
-        android:layout_margin="20dp"
+        android:layout_width="144dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="16dp"
         android:background="@drawable/btn_round_corner"
-        android:text="Return To All Quizzes"
         android:backgroundTint="@color/purple_500"
+        android:text="Return To All Quizzes"
+        android:textAllCaps="false"
         android:textColor="@color/white"
         android:textStyle="bold"
-        android:textAllCaps="false" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.86" />
 
-</LinearLayout>
+    <Button
+        android:id="@+id/btnRecommend"
+        android:layout_width="144dp"
+        android:layout_height="60dp"
+        android:layout_margin="30dp"
+        android:layout_marginEnd="40dp"
+        android:background="@drawable/btn_round_corner"
+        android:backgroundTint="@color/purple_500"
+        android:text="Job Suggestions"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/tvMockAssessResult"
+        app:layout_constraintTop_toBottomOf="@+id/tvMockAssessResult"
+        app:layout_constraintVertical_bias="0.338" />
+
+    <TextView
+        android:id="@+id/tvReadMore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="11dp"
+        android:text="@string/read_more"
+        android:textSize="17sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvMockAssessResult" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
