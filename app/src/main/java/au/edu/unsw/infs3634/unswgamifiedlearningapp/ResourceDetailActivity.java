@@ -48,8 +48,8 @@ public class ResourceDetailActivity extends AppCompatActivity {
 
         ibMenuClicked();
 
-        //youtube player function-reference: https://github.com/PierfrancescoSoffritti/android-youtube-player
-        //embedded youtube video into resourcedetailactivity
+        //youtube player API-reference: https://github.com/PierfrancescoSoffritti/android-youtube-player
+        //YOUTUBE FUNCTION - embeds video into ResourceDetailActivity
         youTubePlayerView = findViewById(R.id.activity_youtubePlayerView);
         //ensures the video stops playing when exited
         getLifecycle().addObserver(youTubePlayerView);

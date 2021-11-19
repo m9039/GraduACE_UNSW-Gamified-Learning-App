@@ -52,50 +52,54 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         }
 
     }
-
+    //REGISTER FUNCTION: method for user registration
     private void registerUser() {
         String name = etName.getText().toString().trim();
         String email = etEmail.getText().toString().trim();
         String username = etUsername.getText().toString().trim();
         String password = etPassword.getText().toString().trim();
 
+        //error msg if no name is inputted
         if(name.isEmpty()) {
             etName.setError("Full name is required!");
             etName.requestFocus();
             return;
         }
 
+        //error msg if no email inputted
         if(email.isEmpty()) {
             etEmail.setError("Email is required!");
             etEmail.requestFocus();
             return;
         }
-
+        //error msg if email does not contain .com or @
         if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
             etEmail.setError("Please provide a valid email!");
             etEmail.requestFocus();
             return;
         }
-
+        //error msg if no username inputted
         if(username.isEmpty()) {
             etUsername.setError("Username is required!");
             etUsername.requestFocus();
             return;
         }
-
+        //error msg if no password inputted
         if(password.isEmpty()) {
             etPassword.setError("Password is required!");
             etPassword.requestFocus();
             return;
         }
-
+        //error msg if password is less than 6 characters
         if(password.length() < 6) {
             etPassword.setError("Minimum password length should be 6 characters!");
             etPassword.requestFocus();
             return;
         }
 
+        //make progressBar visible when user clicks login for user feedback
         progressBar.setVisibility(View.VISIBLE);
+        //Firebase creates user with email and password
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
@@ -111,7 +115,9 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                                 public void onComplete(@NonNull Task<Void> task) {
 
                                     if(task.isSuccessful()) {
+                                        //creates a toast to provide feedback if login successful or not
                                         Toast.makeText(getApplicationContext(), "User has been registered successfully!", Toast.LENGTH_LONG).show();
+                                        //Redirects to the LoginActivity
                                         startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
                                         progressBar.setVisibility(View.GONE);
 
@@ -130,6 +136,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                 });
     }
 
+    //redirects to the LoginActivity
     public void goToLogin(View view) {
         Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent);

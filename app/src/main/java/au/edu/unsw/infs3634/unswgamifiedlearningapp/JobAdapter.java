@@ -18,47 +18,13 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-public class JobAdapter extends RecyclerView.Adapter<JobAdapter.MyViewHolder> implements Filterable {
+public class JobAdapter extends RecyclerView.Adapter<JobAdapter.MyViewHolder>{
     public ArrayList<Job> mJobs;
-    public ArrayList<Job> mJobsFiltered;
     public JobAdapter.ClickListener listener;
 
     public JobAdapter(Context context, ArrayList<Job> mJobs, JobAdapter.ClickListener listener) {
         this.mJobs = mJobs;
-        this.mJobsFiltered = mJobs;
         this.listener = listener;
-    }
-    //filters list by name
-    @Override
-    public Filter getFilter() {
-        return new Filter() {
-            @Override
-            protected FilterResults performFiltering(CharSequence constraint) {
-                //if empty returns the original list
-                String charString = constraint.toString();
-                if(charString.isEmpty()) {
-                    mJobsFiltered = mJobs;
-                } else {
-                    ArrayList<Job> filteredList = new ArrayList<>();
-                    for (Job jobs : mJobs) {
-                        //compares search bar characters against details of songs
-                        if(jobs.getJobName().toLowerCase().contains(charString.toLowerCase())) {
-                            filteredList.add(jobs);
-                        }
-                    }
-                    mJobsFiltered = filteredList;
-                }
-                FilterResults filterResults = new FilterResults();
-                filterResults.values = mJobsFiltered;
-                return filterResults;
-            }
-
-            @Override
-            protected void publishResults(CharSequence charSequence, FilterResults results) {
-                mJobsFiltered = (ArrayList<Job>) results.values;
-                notifyDataSetChanged();
-            }
-        };
     }
 
     class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
@@ -80,22 +46,6 @@ public class JobAdapter extends RecyclerView.Adapter<JobAdapter.MyViewHolder> im
         public void onClick(View view) {listener.onClick(getAdapterPosition()); }
     }
 
-    //sort method
-    public void sort(final int sortMethod) {
-        if(mJobsFiltered.size() > 0) {
-            Collections.sort(mJobsFiltered, new Comparator<Job>() {
-                @Override
-                public int compare(Job o1, Job o2) {
-                    if (sortMethod == 1) {
-                        return o1.getJobName().compareTo(o2.getJobName()); //sorts by job name
-                    }
-                    // if they did not put anything it will sort by job name
-                    return o1.getJobName().compareTo(o2.getJobName());
-                }
-            });
-        }
-        notifyDataSetChanged();
-    }
     //Allows click events to be caught
     public interface ClickListener {
         void onClick(int position);
@@ -111,16 +61,15 @@ public class JobAdapter extends RecyclerView.Adapter<JobAdapter.MyViewHolder> im
     //binds the data to the TextView Elements in each row
     @Override
     public void onBindViewHolder(@NonNull JobAdapter.MyViewHolder holder, int position) {
-        Job jobs = mJobsFiltered.get(position);
+        Job jobs = mJobs.get(position);
         holder.category.setText(jobs.getCategory());
         holder.icon.setImageResource(jobs.getIcon());
-
 
     }
 
     @Override
     public int getItemCount() {
-        return mJobsFiltered.size();
+        return mJobs.size();
     }
 
 }

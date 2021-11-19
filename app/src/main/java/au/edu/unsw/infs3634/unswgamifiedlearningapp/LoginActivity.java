@@ -40,7 +40,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         mAuth = FirebaseAuth.getInstance();
 
-
     }
 
     @Override
@@ -52,30 +51,33 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         }
     }
 
+    //LOGIN FUNCTION: method for user login
     private void loginUser() {
         String email = etEmail.getText().toString().trim();
         String password = etPassword.getText().toString().trim();
 
+        //error msg if no email inputted
         if(email.isEmpty()) {
             etEmail.setError("Email is required!");
             etEmail.requestFocus();
             return;
         }
-
+        //error msg if email does not contain .com or @
         if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
             etEmail.setError("Please provide a valid email!");
             etEmail.requestFocus();
             return;
         }
-
+        //error msg if no password inputted
         if(password.isEmpty()) {
             etPassword.setError("Password is required!");
             etPassword.requestFocus();
             return;
         }
 
-
+        //make progressBar visible when user clicks login for user feedback
         progressBar.setVisibility(View.VISIBLE);
+        //Firebase checks email and password
         mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
@@ -83,17 +85,19 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 if (task.isSuccessful()) {
                     //redirects to home activity
                     startActivity(new Intent(LoginActivity.this, HomeActivity.class));
+                    //creates a toast to provide feedback if login successful or not
                     Toast.makeText(getApplicationContext(), "Successful Login!", Toast.LENGTH_LONG).show();
                     progressBar.setVisibility(View.GONE);
 
                 } else {
-                    Toast.makeText(getApplicationContext(), "Failed to login! Please check your credentials!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "Failed to login! Please check your credentials!",
+                            Toast.LENGTH_LONG).show();
                     progressBar.setVisibility(View.GONE);
                 }
             }
         });
     }
-
+        //redirects to the RegisterActivity
         public void goToRegister (View view){
             Intent intent = new Intent(this, RegisterActivity.class);
             startActivity(intent);

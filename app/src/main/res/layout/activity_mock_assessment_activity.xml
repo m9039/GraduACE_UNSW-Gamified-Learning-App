@@ -90,6 +90,7 @@
         android:textStyle="bold"/>
 
 <!--    zoom feature to enable better readability of imageViews-->
+<!--    TouchImageView function - reference: https://github.com/MikeOrtiz/TouchImageView-->
     <com.ortiz.touchview.TouchImageView
         android:id="@+id/ivImage"
         android:layout_width="match_parent"

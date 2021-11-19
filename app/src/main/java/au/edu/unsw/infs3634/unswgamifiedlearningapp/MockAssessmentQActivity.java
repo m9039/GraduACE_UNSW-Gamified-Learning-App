@@ -22,6 +22,7 @@ public class MockAssessmentQActivity extends AppCompatActivity {
     private String quizType, result;
     private Button btnOptionA, btnOptionB, btnOptionC, btnOptionD, btnNext, btnResults, btnSolution;
     Button ibMenu;
+    //TouchImageView enables user to zoom into question images
     private TouchImageView ivImage;
     private ArrayList<MockAssessment> numericalQuizArrayList;
     private ArrayList<MockAssessment> verbalQuizArrayList;

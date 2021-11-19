@@ -43,6 +43,7 @@ public class JobDetailActivity extends AppCompatActivity {
         ImageView jobImg = findViewById(R.id.ivJobImg);
         jobImg.setImageResource(jobs.getJobImage());
 
+        //JOB OUTLOOK FUNCTION: OnClick, will send user to job outlook website
         Button readBtn = findViewById(R.id.btnRead);
         readBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,7 +69,8 @@ public class JobDetailActivity extends AppCompatActivity {
         //Instantiate new bottom sheet dialog
         BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(JobDetailActivity.this);
         //Inflate the view so that users are able to view it
-        View bottomSheetView = LayoutInflater.from(getApplicationContext()).inflate(R.layout.menu, (LinearLayout)findViewById(R.id.llMenu));
+        View bottomSheetView = LayoutInflater.from(getApplicationContext()).inflate(R.layout.menu,
+                (LinearLayout)findViewById(R.id.llMenu));
         Button btnClose = bottomSheetView.findViewById(R.id.btnClose);
         Button btnHome = bottomSheetView.findViewById(R.id.btnHome);
         Button btnPersonalityQuizzes = bottomSheetView.findViewById(R.id.btnPersonalityQuizzes);

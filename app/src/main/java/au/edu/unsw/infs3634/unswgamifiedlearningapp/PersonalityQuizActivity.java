@@ -122,6 +122,7 @@ public class PersonalityQuizActivity extends AppCompatActivity {
                                 if (currentScore >= 25 ){
                                     personalityDesc = "You are more likely to be curious, have a wide range of interests and a strong sense of independence.";
                                     personalityType ="High Openness";
+                                    //READ MORE FUNCTION: links to further information on Big 5 Personalities
                                     readMoreLink ="https://www.crystalknows.com/big-five/openness";
                                 } else {
                                     personalityDesc = "You are more likely to be practical, conventional and prefer to stick to a routine.";
