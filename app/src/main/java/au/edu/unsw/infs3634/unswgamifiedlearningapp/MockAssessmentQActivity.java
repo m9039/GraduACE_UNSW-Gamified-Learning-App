@@ -148,6 +148,7 @@ public class MockAssessmentQActivity extends AppCompatActivity {
         });
     }
 
+    //Source: https://www.youtube.com/watch?v=5lmhxob61eg&list=RDCMUC0RhatS1pyxInC00YKjjBqQ&start_radio=1
     //when option A is clicked
     public void optionAClicked(){
         btnOptionA.setOnClickListener(new View.OnClickListener() {
@@ -164,6 +165,7 @@ public class MockAssessmentQActivity extends AppCompatActivity {
                     //if the answer to this question is equal to the option selected
                     if (numericalQuizArrayList.get(currentArrayPosition).getAnswer().trim().toLowerCase().equals(btnOptionA.getText().toString().trim().toLowerCase())){
                         //set the background colour to green
+                        //Source: https://stackoverflow.com/questions/30689924/how-to-change-color-of-a-button-when-it-is-pressed-like-in-a-quiz-app
                         btnOptionA.setBackgroundColor(getColor(R.color.green));
                         //increment score
                         currentScore++;

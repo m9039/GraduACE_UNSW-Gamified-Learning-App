@@ -84,6 +84,7 @@ public class PersonalityQuizActivity extends AppCompatActivity {
     }
 
     //when user changes the seekbar
+    //Source: https://www.homeandlearn.co.uk/android/android_seekbar.html
     private void seekBarChanged (){
         seekbar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
@@ -188,6 +189,7 @@ public class PersonalityQuizActivity extends AppCompatActivity {
                     currentArrayPosition++;
                     setDataToViews(currentArrayPosition, currentArrayPosition);
                     //set the progress bar back to neutral
+                    //Source: https://stackoverflow.com/questions/23844736/resetting-a-seekbar-in-android
                     seekbar.setProgress(3);
                 }
             }
