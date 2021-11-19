@@ -1,12 +1,10 @@
 package au.edu.unsw.infs3634.unswgamifiedlearningapp;
 
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -48,7 +46,7 @@ public class ResourceDetailActivity extends AppCompatActivity {
 
         ibMenuClicked();
 
-        //youtube player API-reference: https://github.com/PierfrancescoSoffritti/android-youtube-player
+        //youtube player API-reference:Pierfrancesco Soffritti, https://github.com/PierfrancescoSoffritti/android-youtube-player
         //YOUTUBE FUNCTION - embeds video into ResourceDetailActivity
         youTubePlayerView = findViewById(R.id.activity_youtubePlayerView);
         //ensures the video stops playing when exited

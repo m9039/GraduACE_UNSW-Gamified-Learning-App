@@ -3,12 +3,10 @@ package au.edu.unsw.infs3634.unswgamifiedlearningapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.content.res.ColorStateList;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
@@ -23,6 +21,7 @@ public class MockAssessmentQActivity extends AppCompatActivity {
     private Button btnOptionA, btnOptionB, btnOptionC, btnOptionD, btnNext, btnResults, btnSolution;
     Button ibMenu;
     //TouchImageView enables user to zoom into question images
+    //Reference Mike Ortiz:https://github.com/MikeOrtiz/TouchImageView
     private TouchImageView ivImage;
     private ArrayList<MockAssessment> numericalQuizArrayList;
     private ArrayList<MockAssessment> verbalQuizArrayList;
