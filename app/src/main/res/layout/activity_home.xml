@@ -16,6 +16,7 @@
         android:layout_marginRight="30dp"
         android:layout_marginTop="50dp"
         android:textStyle="bold"
+        android:textColor="#414141"
         android:text="Hi there!"
         android:textSize="35sp"/>
 
@@ -28,6 +29,7 @@
         android:background="@drawable/btn_round_corner"
         android:drawableRight="@drawable/student"
         android:backgroundTint="#F5E9D7"
+        android:textColor="#414141"
         android:padding="10dp"
         android:text="Welcome to the graduACE app, a platform where we strive to fully equip and prepare you in ACing your next assessment process! "
         android:textSize="18sp"
@@ -46,7 +48,6 @@
             android:layout_marginRight="15dp"
             android:background="@drawable/btn_round_corner"
             android:drawableTop="@drawable/innovation"
-            android:fontFamily="sans-serif-medium"
             android:gravity="center|center_vertical"
             android:onClick="goToPersonalityHome"
             android:paddingTop="15dp"
@@ -63,7 +64,6 @@
             android:layout_marginTop="30dp"
             android:background="@drawable/btn_round_corner"
             android:drawableTop="@drawable/homework"
-            android:fontFamily="sans-serif-medium"
             android:gravity="center|center_vertical"
             android:onClick="goToMockAssessments"
             android:paddingTop="15dp"
