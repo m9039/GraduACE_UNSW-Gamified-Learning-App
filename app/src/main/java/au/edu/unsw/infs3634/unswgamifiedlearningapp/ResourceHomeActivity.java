@@ -42,6 +42,7 @@ public class ResourceHomeActivity extends AppCompatActivity implements VideoAdap
 
     }
 
+    //when user clicks on an item, data is passed as an intent and opens activity
     public void onClick(int position) {
         String msg = mVideo.get(position).getId();
         Intent intent = new Intent(this, ResourceDetailActivity.class);
@@ -81,6 +82,7 @@ public class ResourceHomeActivity extends AppCompatActivity implements VideoAdap
         }
     }
 
+    //When menu hamburger button is clicked, launch method
     private void ibMenuClicked() {
         ibMenu.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -90,8 +92,11 @@ public class ResourceHomeActivity extends AppCompatActivity implements VideoAdap
         });
     }
 
+    //Displays menu screen from xml file and attaches functionalities to each property
     private void showMenuScreen() {
+        //Instantiate new bottom sheet dialog
         BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(ResourceHomeActivity.this);
+        //Inflate the view so that users are able to view it
         View bottomSheetView = LayoutInflater.from(getApplicationContext()).inflate(R.layout.menu, (LinearLayout)findViewById(R.id.llMenu));
         Button btnClose = bottomSheetView.findViewById(R.id.btnClose);
         Button btnHome = bottomSheetView.findViewById(R.id.btnHome);
@@ -100,6 +105,7 @@ public class ResourceHomeActivity extends AppCompatActivity implements VideoAdap
         Button btnJobSuggestions = bottomSheetView.findViewById(R.id.btnJobSuggestions);
         Button btnResourceVideos = bottomSheetView.findViewById(R.id.btnResourceVideos);
 
+        //When close button is clicked, the menu is hidden
         btnClose.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -107,6 +113,7 @@ public class ResourceHomeActivity extends AppCompatActivity implements VideoAdap
             }
         });
 
+        //When button is clicked, it rediverts users to desired destination
         btnHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -115,6 +122,7 @@ public class ResourceHomeActivity extends AppCompatActivity implements VideoAdap
             }
         });
 
+        //When button is clicked, it rediverts users to desired destination
         btnPersonalityQuizzes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -123,6 +131,7 @@ public class ResourceHomeActivity extends AppCompatActivity implements VideoAdap
             }
         });
 
+        //When button is clicked, it rediverts users to desired destination
         btnMockAssessments.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -131,6 +140,7 @@ public class ResourceHomeActivity extends AppCompatActivity implements VideoAdap
             }
         });
 
+        //When button is clicked, it rediverts users to desired destination
         btnJobSuggestions.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -139,6 +149,7 @@ public class ResourceHomeActivity extends AppCompatActivity implements VideoAdap
             }
         });
 
+        //When button is clicked, it rediverts users to desired destination
         btnResourceVideos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

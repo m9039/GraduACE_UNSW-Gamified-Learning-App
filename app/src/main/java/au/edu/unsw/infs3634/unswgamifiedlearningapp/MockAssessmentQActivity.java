@@ -49,11 +49,14 @@ public class MockAssessmentQActivity extends AppCompatActivity {
         logicalQuizArrayList = new ArrayList<>();
         ibMenu = findViewById(R.id.ibMenu);
 
+        //When menu button clicked, launch this method
         ibMenuClicked();
 
+        //calls the intent and passes respective quiz type
         Intent intent = getIntent();
         quizType = intent.getStringExtra("receiveQuiz");
 
+        //Calling the corresponding array list and populating data
         if (quizType.equals("Numerical")){
             tvQuizTitle.setText("Numerical Reasoning Test");
             getNumericalQuestions(numericalQuizArrayList);
@@ -68,21 +71,22 @@ public class MockAssessmentQActivity extends AppCompatActivity {
             setDataToViews(currentQuestionPosition,currentArrayPosition);
         }
 
+        //Calls method when buttons are clicked
         nextButtonClicked();
-
         optionAClicked();
         optionBClicked();
         optionCClicked();
         optionDClicked();
-
         solutionButtonClicked();
 
     }
 
+    //Launches when next button is clicked
     private void nextButtonClicked (){
         btnNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //Setting them so that they are all clickable
                 btnOptionA.setClickable(true);
                 btnOptionA.setEnabled(true);
                 btnOptionB.setClickable(true);
@@ -92,20 +96,27 @@ public class MockAssessmentQActivity extends AppCompatActivity {
                 btnOptionD.setClickable(true);
                 btnOptionD.setEnabled(true);
 
+                //Setting the background colour back to white
                 btnOptionA.setBackgroundColor(getColor(R.color.white));
                 btnOptionB.setBackgroundColor(getColor(R.color.white));
                 btnOptionC.setBackgroundColor(getColor(R.color.white));
                 btnOptionD.setBackgroundColor(getColor(R.color.white));
 
+                //Resetting zoom function
                 ivImage.resetZoom();
 
+                //When user gets to the last question in the quiz
                 if (currentArrayPosition == 4){
+                    //Hide the next button
                     btnNext.setVisibility(View.GONE);
+                    //Show the results button
                     btnResults.setVisibility(View.VISIBLE);
 
+                    //When result button is clicked
                     btnResults.setOnClickListener(new View.OnClickListener(){
                         @Override
                         public void onClick(View v) {
+                            //sets score according with which quiz the user completed
                             if (quizType.equals("Numerical")){
                                 result = "Your Numerical Reasoning test score is:\n" + currentScore + "/5";
                             } else if (quizType.equals("Verbal")){
@@ -113,10 +124,12 @@ public class MockAssessmentQActivity extends AppCompatActivity {
                             } else if (quizType.equals("Logical")){
                                 result = "Your Logical Reasoning test score is:\n" + currentScore + "/5";
                             }
+                            //Calls method to show bottom screen and results
                             showResultBottomScreen();
                         }
                     });
                 } else {
+                    //if user not up to the last question, next question is displayed
                     currentQuestionPosition++;
                     currentArrayPosition++;
                     setDataToViews(currentQuestionPosition, currentArrayPosition);
@@ -125,6 +138,7 @@ public class MockAssessmentQActivity extends AppCompatActivity {
         });
     }
 
+    //launch method when solution button is clicked
     private void solutionButtonClicked(){
         btnSolution.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -134,10 +148,12 @@ public class MockAssessmentQActivity extends AppCompatActivity {
         });
     }
 
+    //when option A is clicked
     public void optionAClicked(){
         btnOptionA.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //disable clickability for other buttons as users are unable to change responses once they have chosen
                 btnOptionB.setClickable(false);
                 btnOptionB.setEnabled(false);
                 btnOptionC.setClickable(false);
@@ -145,24 +161,36 @@ public class MockAssessmentQActivity extends AppCompatActivity {
                 btnOptionD.setClickable(false);
                 btnOptionD.setEnabled(false);
                 if (quizType.equals("Numerical")){
+                    //if the answer to this question is equal to the option selected
                     if (numericalQuizArrayList.get(currentArrayPosition).getAnswer().trim().toLowerCase().equals(btnOptionA.getText().toString().trim().toLowerCase())){
+                        //set the background colour to green
                         btnOptionA.setBackgroundColor(getColor(R.color.green));
+                        //increment score
                         currentScore++;
                     } else {
+                        //otherwise set it to red because it is incorrect
                         btnOptionA.setBackgroundColor(getColor(R.color.red));
                     }
                 } else if (quizType.equals("Verbal")){
+                    //if the answer to this question is equal to the option selected
                     if (verbalQuizArrayList.get(currentArrayPosition).getAnswer().trim().toLowerCase().equals(btnOptionA.getText().toString().trim().toLowerCase())){
+                        //set the background colour to green
                         btnOptionA.setBackgroundColor(getColor(R.color.green));
+                        //increment score
                         currentScore++;
                     } else {
+                        //otherwise set it to red because it is incorrect
                         btnOptionA.setBackgroundColor(getColor(R.color.red));
                     }
                 } else if (quizType.equals("Logical")){
+                    //if the answer to this question is equal to the option selected
                     if (logicalQuizArrayList.get(currentArrayPosition).getAnswer().trim().toLowerCase().equals(btnOptionA.getText().toString().trim().toLowerCase())){
+                        //set background colour to green
                         btnOptionA.setBackgroundColor(getColor(R.color.green));
+                        //increment score
                         currentScore++;
                     } else {
+                        //otherwise set it to red because it is incorrect
                         btnOptionA.setBackgroundColor(getColor(R.color.red));
                     }
                 }
@@ -284,7 +312,9 @@ public class MockAssessmentQActivity extends AppCompatActivity {
 
     private void setDataToViews(int currentQuestionPosition, int currentArrayPosition){
         currentQuestionPosition++;
+        //set question number to textview
         tvQuestionNumber.setText(currentQuestionPosition + "/5");
+        //display questions and options
         if (quizType.equals("Numerical")){
             tvQuestion.setText(numericalQuizArrayList.get(currentArrayPosition).getQuestion());
             ivImage.setImageResource(numericalQuizArrayList.get(currentArrayPosition).getImage());
@@ -309,14 +339,18 @@ public class MockAssessmentQActivity extends AppCompatActivity {
         }
     }
 
+    //displays results screen when user submits the last question
     private void showResultBottomScreen(){
+        //Instantiate new bottom sheet dialog
         BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(MockAssessmentQActivity.this);
+        //Inflate the view so that users are able to view it
         View bottomSheetView = LayoutInflater.from(getApplicationContext()).inflate(R.layout.mock_assessment_result, (LinearLayout)findViewById(R.id.llResult));
         TextView tvMockAssessResult = bottomSheetView.findViewById(R.id.tvMockAssessResult);
         Button btnReturnToQuizzes = bottomSheetView.findViewById(R.id.btnReturn);
         Button btnRestart = bottomSheetView.findViewById(R.id.btnRestart);
         tvMockAssessResult.setText(result);
 
+        //When return button is clicked, the user goes back to quiz home
         btnReturnToQuizzes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -326,6 +360,7 @@ public class MockAssessmentQActivity extends AppCompatActivity {
             }
         });
 
+        //when restart button is clicked, the same quiz is launched again from question1
         btnRestart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -342,13 +377,17 @@ public class MockAssessmentQActivity extends AppCompatActivity {
         bottomSheetDialog.show();
     }
 
+    //displays solutions screen
     private void showSolutionScreen(){
+        //Instantiate new bottom sheet dialog
         BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(MockAssessmentQActivity.this);
+        //Inflate the view so that users are able to view it
         View bottomSheetView = LayoutInflater.from(getApplicationContext()).inflate(R.layout.solutions_popup, (LinearLayout)findViewById(R.id.llSolution));
         TextView tvSolution = bottomSheetView.findViewById(R.id.tvSolution);
         Button btnBack = bottomSheetView.findViewById(R.id.btnBack);
         tvSolution.setText(result);
 
+        //displays the corresponding solution in text view
         if (quizType.equals("Numerical")){
             tvSolution.setText(numericalQuizArrayList.get(currentArrayPosition).getSolution());
         } else if (quizType.equals("Verbal")){
@@ -357,6 +396,7 @@ public class MockAssessmentQActivity extends AppCompatActivity {
             tvSolution.setText(logicalQuizArrayList.get(currentArrayPosition).getSolution());
         }
 
+        //hides the solution when back button is clicked
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -370,6 +410,7 @@ public class MockAssessmentQActivity extends AppCompatActivity {
         bottomSheetDialog.show();
     }
 
+    //populate array list with data
     private void getNumericalQuestions(ArrayList<MockAssessment> numericalQuizArrayList) {
         numericalQuizArrayList.add(new MockAssessment("If Heathrow Airport pledged in January to reduce cancelled flights by 80% by March, by how many cancelled flights have they failed to reach this target?", R.drawable.numerical1, "4", "0", "14", "18", "4", "Step 1: Take the number of flights cancelled in January and calculate an 80% reduction: \n 30 × (1-0.8) = 6 \n Step 2: Subtract this figure from the March figure:\n 10 - 6 = 4, so the answer is 4"));
         numericalQuizArrayList.add(new MockAssessment("If there were 50,000 people employed in Blackpool in 2021 what is the ratio of employed to unemployed people in that year?", R.drawable.numerical2, "25:1", "12.5:1", "10:1", "8.33:1", "10:1", "50k : 5k \n 50 / 5 = 10 \n so the answer is 10:1"));
@@ -378,6 +419,7 @@ public class MockAssessmentQActivity extends AppCompatActivity {
         numericalQuizArrayList.add(new MockAssessment("A Flume, a Rouser and a Lior car are driven around a test track for 450 miles. How much CO2, to the nearest kg, is emitted by the three cars? (1.61 km = 1 mile)?", R.drawable.numerical5, "200kg", "201kg", "202kg", "203kg", "202kg", "Step 1: sum the CO2 emissions for the 3 cars 94 + 86 + 99 = 279 \n Step 2: put into a miles: km ratio 279 x 1.61 = 449.19 g / per mile\n Step 3: convert the emissions from g/km 449.19 x 450 = 202,136 g = 202 kg\n Thus the correct answer is 202 kg"));
     }
 
+    //populate array list with data
     private void getVerbalQuestions(ArrayList<MockAssessment> verbalQuizArrayList) {
         verbalQuizArrayList.add(new MockAssessment("", R.drawable.verbal1, "A", "B", "C", "D", "D", "Work-life balance schemes in the workplace have been applauded by employees and increase morale and motivation at work."));
         verbalQuizArrayList.add(new MockAssessment("", R.drawable.verbal2, "A", "B", "C", "D", "D", "No cuts are required "));
@@ -386,6 +428,7 @@ public class MockAssessmentQActivity extends AppCompatActivity {
         verbalQuizArrayList.add(new MockAssessment("Please identify which type of error appears in the sentence below: ", R.drawable.verbal5, "A", "B", "C", "D",  "A", "Grammar"));
     }
 
+    //populate array list with data
     private void getLogicalQuestions(ArrayList<MockAssessment> logicalQuizArrayList) {
         logicalQuizArrayList.add(new MockAssessment("Which of the boxes comes next in the sequence?", R.drawable.logical1, "A", "B", "C", "D", "A", "The arrows change direction from pointing up, to down, to right, then to left with each turn. Circles increase by one with each turn.\n" +
                 "In the fifth box the arrow is pointing up and there are five circles, so the next box must have the arrow pointing down, and have six circles."));
@@ -397,6 +440,8 @@ public class MockAssessmentQActivity extends AppCompatActivity {
                 "If there are no star shapes there should be no circle shapes. If there are three star shapes, there should be three circle shapes. Option D is the only one that abides by this rule."));
         logicalQuizArrayList.add(new MockAssessment("Who can you infer is most likely to have taken the lemon cake?", R.drawable.logical5, "Maggie", "Susan", "Mark", "None",  "Mark", "Given what we have learned, it is reasonable to assume that Mark is the culprit. The facts about Maggie and Susan might help in forming a deductive argument, but in this context they are inconsequential. Mark’s pattern of behaviour indicates that he is guilty."));
     }
+
+    //When menu hamburger button is clicked, launch method
     private void ibMenuClicked() {
         ibMenu.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -406,8 +451,11 @@ public class MockAssessmentQActivity extends AppCompatActivity {
         });
     }
 
+    //Displays menu screen from xml file and attaches functionalities to each property
     private void showMenuScreen() {
+        //Instantiate new bottom sheet dialog
         BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(MockAssessmentQActivity.this);
+        //Inflate the view so that users are able to view it
         View bottomSheetView = LayoutInflater.from(getApplicationContext()).inflate(R.layout.menu, (LinearLayout)findViewById(R.id.llMenu));
         Button btnClose = bottomSheetView.findViewById(R.id.btnClose);
         Button btnHome = bottomSheetView.findViewById(R.id.btnHome);
@@ -416,6 +464,7 @@ public class MockAssessmentQActivity extends AppCompatActivity {
         Button btnJobSuggestions = bottomSheetView.findViewById(R.id.btnJobSuggestions);
         Button btnResourceVideos = bottomSheetView.findViewById(R.id.btnResourceVideos);
 
+        //When close button is clicked, the menu is hidden
         btnClose.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -423,6 +472,7 @@ public class MockAssessmentQActivity extends AppCompatActivity {
             }
         });
 
+        //When button is clicked, it rediverts users to desired destination
         btnHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -431,6 +481,7 @@ public class MockAssessmentQActivity extends AppCompatActivity {
             }
         });
 
+        //When button is clicked, it rediverts users to desired destination
         btnPersonalityQuizzes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -439,6 +490,7 @@ public class MockAssessmentQActivity extends AppCompatActivity {
             }
         });
 
+        //When button is clicked, it rediverts users to desired destination
         btnMockAssessments.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -447,6 +499,7 @@ public class MockAssessmentQActivity extends AppCompatActivity {
             }
         });
 
+        //When button is clicked, it rediverts users to desired destination
         btnJobSuggestions.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -455,6 +508,7 @@ public class MockAssessmentQActivity extends AppCompatActivity {
             }
         });
 
+        //When button is clicked, it rediverts users to desired destination
         btnResourceVideos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

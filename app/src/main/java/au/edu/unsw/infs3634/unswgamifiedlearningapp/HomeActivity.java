@@ -15,22 +15,25 @@ public class HomeActivity extends AppCompatActivity {
 
     }
 
+    //Opens activity when onclick method is called on respective button
     public void goToPersonalityHome(View view){
         Intent intent = new Intent (this, PersonalityHomeActivity.class);
         startActivity(intent);
     }
 
+    //Opens activity when onclick method is called on respective button
     public void goToMockAssessments(View view){
         Intent intent = new Intent (this, MockAssessHomeActivity.class);
         startActivity(intent);
     }
 
-    //NEED TO CHANGE THIS TO THE CORRECT CLASS
+    //Opens activity when onclick method is called on respective button
     public void goToJobSuggestions(View view){
         Intent intent = new Intent (this, JobHomeActivity.class);
         startActivity(intent);
     }
 
+    //Opens activity when onclick method is called on respective button
     public void goToResourceVideos(View view){
         Intent intent = new Intent (this, ResourceHomeActivity.class);
         startActivity(intent);

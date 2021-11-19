@@ -33,8 +33,10 @@ public class PersonalityHomeActivity extends AppCompatActivity {
         btnViewResults = findViewById(R.id.btnViewResults);
         ibMenu = findViewById(R.id.ibMenu);
 
+        //When menu button clicked, launch this method
         ibMenuClicked();
 
+        //launch openness quiz when button is clicked
         btnOpenness.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -45,6 +47,7 @@ public class PersonalityHomeActivity extends AppCompatActivity {
             }
         });
 
+        //launch Conscientiousness quiz when button is clicked
         btnConscientiousness.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -55,6 +58,7 @@ public class PersonalityHomeActivity extends AppCompatActivity {
             }
         });
 
+        //launch Extraversion quiz when button is clicked
         btnExtraversion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -65,6 +69,7 @@ public class PersonalityHomeActivity extends AppCompatActivity {
             }
         });
 
+        //launch Agreeableness quiz when button is clicked
         btnAgreeableness.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -75,6 +80,7 @@ public class PersonalityHomeActivity extends AppCompatActivity {
             }
         });
 
+        //launch Neuroticism quiz when button is clicked
         btnNeuroticism.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -88,6 +94,7 @@ public class PersonalityHomeActivity extends AppCompatActivity {
 
     }
 
+    //When menu hamburger button is clicked, launch method
     private void ibMenuClicked() {
         ibMenu.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -97,8 +104,11 @@ public class PersonalityHomeActivity extends AppCompatActivity {
         });
     }
 
+    //Displays menu screen from xml file and attaches functionalities to each property
     private void showMenuScreen() {
+        //Instantiate new bottom sheet dialog
         BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(PersonalityHomeActivity.this);
+        //Inflate the view so that users are able to view it
         View bottomSheetView = LayoutInflater.from(getApplicationContext()).inflate(R.layout.menu, (LinearLayout)findViewById(R.id.llMenu));
         Button btnClose = bottomSheetView.findViewById(R.id.btnClose);
         Button btnHome = bottomSheetView.findViewById(R.id.btnHome);
@@ -107,6 +117,7 @@ public class PersonalityHomeActivity extends AppCompatActivity {
         Button btnJobSuggestions = bottomSheetView.findViewById(R.id.btnJobSuggestions);
         Button btnResourceVideos = bottomSheetView.findViewById(R.id.btnResourceVideos);
 
+        //When close button is clicked, the menu is hidden
         btnClose.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -114,6 +125,7 @@ public class PersonalityHomeActivity extends AppCompatActivity {
             }
         });
 
+        //When button is clicked, it rediverts users to desired destination
         btnHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -122,6 +134,7 @@ public class PersonalityHomeActivity extends AppCompatActivity {
             }
         });
 
+        //When button is clicked, it rediverts users to desired destination
         btnPersonalityQuizzes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -130,6 +143,7 @@ public class PersonalityHomeActivity extends AppCompatActivity {
             }
         });
 
+        //When button is clicked, it rediverts users to desired destination
         btnMockAssessments.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -138,6 +152,7 @@ public class PersonalityHomeActivity extends AppCompatActivity {
             }
         });
 
+        //When button is clicked, it rediverts users to desired destination
         btnJobSuggestions.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -146,6 +161,7 @@ public class PersonalityHomeActivity extends AppCompatActivity {
             }
         });
 
+        //When button is clicked, it rediverts users to desired destination
         btnResourceVideos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

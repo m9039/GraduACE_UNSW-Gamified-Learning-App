@@ -82,6 +82,7 @@ public class JobHomeActivity extends AppCompatActivity implements JobAdapter.Cli
         }
     }
 
+    //When menu hamburger button is clicked, launch method
     private void ibMenuClicked() {
         ibMenu.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -90,8 +91,11 @@ public class JobHomeActivity extends AppCompatActivity implements JobAdapter.Cli
             }
         });
     }
+    //Displays menu screen from xml file and attaches functionalities to each property
     private void showMenuScreen() {
+        //Instantiate new bottom sheet dialog
         BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(JobHomeActivity.this);
+        //Inflate the view so that users are able to view it
         View bottomSheetView = LayoutInflater.from(getApplicationContext()).inflate(R.layout.menu, (LinearLayout)findViewById(R.id.llMenu));
         Button btnClose = bottomSheetView.findViewById(R.id.btnClose);
         Button btnHome = bottomSheetView.findViewById(R.id.btnHome);
@@ -100,6 +104,7 @@ public class JobHomeActivity extends AppCompatActivity implements JobAdapter.Cli
         Button btnJobSuggestions = bottomSheetView.findViewById(R.id.btnJobSuggestions);
         Button btnResourceVideos = bottomSheetView.findViewById(R.id.btnResourceVideos);
 
+        //When close button is clicked, the menu is hidden
         btnClose.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -107,6 +112,7 @@ public class JobHomeActivity extends AppCompatActivity implements JobAdapter.Cli
             }
         });
 
+        //When button is clicked, it rediverts users to desired destination
         btnHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -115,6 +121,7 @@ public class JobHomeActivity extends AppCompatActivity implements JobAdapter.Cli
             }
         });
 
+        //When button is clicked, it rediverts users to desired destination
         btnPersonalityQuizzes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -123,6 +130,7 @@ public class JobHomeActivity extends AppCompatActivity implements JobAdapter.Cli
             }
         });
 
+        //When button is clicked, it rediverts users to desired destination
         btnMockAssessments.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -131,6 +139,7 @@ public class JobHomeActivity extends AppCompatActivity implements JobAdapter.Cli
             }
         });
 
+        //When button is clicked, it rediverts users to desired destination
         btnJobSuggestions.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -139,6 +148,7 @@ public class JobHomeActivity extends AppCompatActivity implements JobAdapter.Cli
             }
         });
 
+        //When button is clicked, it rediverts users to desired destination
         btnResourceVideos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

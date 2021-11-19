@@ -48,11 +48,14 @@ public class PersonalityQuizActivity extends AppCompatActivity {
         neuroticismPersonalityQuizArrayList = new ArrayList<>();
         ibMenu = findViewById(R.id.ibMenu);
 
+        //When menu button clicked, launch this method
         ibMenuClicked();
 
+        //calls the intent and passes respective quiz type
         Intent intent = getIntent();
         quizType = intent.getStringExtra("receiveQuiz");
 
+        //Calling the corresponding array list and populating data
         if (quizType.equals("Openness")){
             tvQuizTitle.setText("How OPEN are you?");
             getOpennessQuizQuestions(opennessPersonalityQuizArrayList);
@@ -75,14 +78,17 @@ public class PersonalityQuizActivity extends AppCompatActivity {
             setDataToViews(currentQuestionPosition,currentArrayPosition);
         }
 
+        //Calls method when buttons are clicked
         seekBarChanged();
         nextButtonClicked();
     }
 
+    //when user changes the seekbar
     private void seekBarChanged (){
         seekbar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                //set int value as corresponding progress
                 seekBarProgress = progress;
             }
 
@@ -96,18 +102,22 @@ public class PersonalityQuizActivity extends AppCompatActivity {
         });
     }
 
+    //Launches when next button is clicked
     private void nextButtonClicked (){
         btnNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //updates the current score but adding user input
                 currentScore = currentScore + seekBarProgress;
                 if (currentArrayPosition == 9){
+                    //when user reaches last question, next button is hidden and results button shown
                     btnNext.setVisibility(View.GONE);
                     btnResults.setVisibility(View.VISIBLE);
 
                     btnResults.setOnClickListener(new View.OnClickListener(){
                         @Override
                         public void onClick(View v) {
+                            //when results button is clicked, sets score and their personality type
                             if (quizType.equals("Openness")){
                                 if (currentScore >= 25 ){
                                     personalityDesc = "You are more likely to be curious, have a wide range of interests and a strong sense of independence.";
@@ -167,26 +177,33 @@ public class PersonalityQuizActivity extends AppCompatActivity {
 
                                 }
                             }
+                            //shows the results bottom screen
                             showResultBottomScreen();
                         }
                     });
                 } else {
+                    //if not up to the last question in the quiz, go to next question
                     currentQuestionPosition++;
                     currentArrayPosition++;
                     setDataToViews(currentArrayPosition, currentArrayPosition);
+                    //set the progress bar back to neutral
                     seekbar.setProgress(3);
                 }
             }
         });
     }
 
+    //shpws the results in bottom screen
     private void showResultBottomScreen(){
+        //Instantiate new bottom sheet dialog
         BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(PersonalityQuizActivity.this);
+        //Inflate the view so that users are able to view it
         View bottomSheetView = LayoutInflater.from(getApplicationContext()).inflate(R.layout.personality_result, (LinearLayout)findViewById(R.id.llResult));
         TextView tvPersonalityResult = bottomSheetView.findViewById(R.id.tvMockAssessResult);
         tvPersonalityResult.setText(personalityDesc);
 
         TextView tvReadMore = bottomSheetView.findViewById(R.id.tvReadMore);
+        //when read more button clicked, open browser
         tvReadMore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -198,6 +215,7 @@ public class PersonalityQuizActivity extends AppCompatActivity {
         TextView tvMockAssessType =bottomSheetView.findViewById(R.id.tvMockAssessType);
         tvMockAssessType.setText(personalityType);
 
+        //sends user to job recommendations screen
         Button btnRecommend = bottomSheetView.findViewById(R.id.btnRecommend);
         btnRecommend.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -208,6 +226,7 @@ public class PersonalityQuizActivity extends AppCompatActivity {
             }
         });
 
+        //returns to main quiz screen
         Button btnReturnToQuizzes = bottomSheetView.findViewById(R.id.btnReturnToQuizzes);
         btnReturnToQuizzes.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -222,6 +241,7 @@ public class PersonalityQuizActivity extends AppCompatActivity {
         bottomSheetDialog.setContentView(bottomSheetView);
         bottomSheetDialog.show();
     }
+
 
     private void setDataToViews(int currentQuestionPosition, int currentArrayPosition){
         currentQuestionPosition++;
@@ -240,6 +260,7 @@ public class PersonalityQuizActivity extends AppCompatActivity {
 
     }
 
+    //populate array list with data
     private void getOpennessQuizQuestions(ArrayList<PersonalityQuiz> opennessPersonalityQuizArrayList) {
         opennessPersonalityQuizArrayList.add(new PersonalityQuiz("I'm interested in learning about the history and politics of other countries."));
         opennessPersonalityQuizArrayList.add(new PersonalityQuiz("I would spend my time reading a book of poetry."));
@@ -253,6 +274,7 @@ public class PersonalityQuizActivity extends AppCompatActivity {
         opennessPersonalityQuizArrayList.add(new PersonalityQuiz("Sometimes I like to just watch the wind as it blows through the trees."));
     }
 
+    //populate array list with data
     private void getConscientiousnessQuizQuestions(ArrayList<PersonalityQuiz> conscientiousnessPersonalityQuizArrayList) {
         conscientiousnessPersonalityQuizArrayList.add(new PersonalityQuiz("I clean my office or home quite frequently."));
         conscientiousnessPersonalityQuizArrayList.add(new PersonalityQuiz("When working, I often set ambitious goals for myself."));
@@ -266,6 +288,7 @@ public class PersonalityQuizActivity extends AppCompatActivity {
         conscientiousnessPersonalityQuizArrayList.add(new PersonalityQuiz("I prefer to stick to a plan, rather than do whatever comes to mind."));
     }
 
+    //populate array list with data
     private void getExtraversionQuizQuestions(ArrayList<PersonalityQuiz> extraversionPersonalityQuizArrayList) {
         extraversionPersonalityQuizArrayList.add(new PersonalityQuiz("I feel reasonably satisfied with myself overall."));
         extraversionPersonalityQuizArrayList.add(new PersonalityQuiz("I am energetic nearly all the time."));
@@ -279,6 +302,7 @@ public class PersonalityQuizActivity extends AppCompatActivity {
         extraversionPersonalityQuizArrayList.add(new PersonalityQuiz("Less people are more upbeat and dynamic than I generally am."));
     }
 
+    //populate array list with data
     private void getAgreeablenessQuizQuestions(ArrayList<PersonalityQuiz> agreeablenessPersonalityQuizArrayList) {
         agreeablenessPersonalityQuizArrayList.add(new PersonalityQuiz("I rarely hold a grudge, even against people who have badly wronged me."));
         agreeablenessPersonalityQuizArrayList.add(new PersonalityQuiz("People think of me as someone who is patient."));
@@ -292,6 +316,7 @@ public class PersonalityQuizActivity extends AppCompatActivity {
         agreeablenessPersonalityQuizArrayList.add(new PersonalityQuiz("Even when people make a lot of mistakes, I rarely say anything negative."));
     }
 
+    //populate array list with data
     private void getNeuroticismQuizQuestions(ArrayList<PersonalityQuiz> neuroticismPersonalityQuizArrayList) {
         neuroticismPersonalityQuizArrayList.add(new PersonalityQuiz("I would feel afraid if I had to travel in bad weather conditions."));
         neuroticismPersonalityQuizArrayList.add(new PersonalityQuiz("I sometimes can't help worrying about little things."));
@@ -305,6 +330,7 @@ public class PersonalityQuizActivity extends AppCompatActivity {
         neuroticismPersonalityQuizArrayList.add(new PersonalityQuiz("I get very anxious when waiting to hear about an important decision."));
     }
 
+    //When menu hamburger button is clicked, launch method
     private void ibMenuClicked() {
         ibMenu.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -314,8 +340,11 @@ public class PersonalityQuizActivity extends AppCompatActivity {
         });
     }
 
+    //Displays menu screen from xml file and attaches functionalities to each property
     private void showMenuScreen() {
+        //Instantiate new bottom sheet dialog
         BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(PersonalityQuizActivity.this);
+        //Inflate the view so that users are able to view it
         View bottomSheetView = LayoutInflater.from(getApplicationContext()).inflate(R.layout.menu, (LinearLayout)findViewById(R.id.llMenu));
         Button btnClose = bottomSheetView.findViewById(R.id.btnClose);
         Button btnHome = bottomSheetView.findViewById(R.id.btnHome);
@@ -324,6 +353,7 @@ public class PersonalityQuizActivity extends AppCompatActivity {
         Button btnJobSuggestions = bottomSheetView.findViewById(R.id.btnJobSuggestions);
         Button btnResourceVideos = bottomSheetView.findViewById(R.id.btnResourceVideos);
 
+        //When close button is clicked, the menu is hidden
         btnClose.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -331,6 +361,7 @@ public class PersonalityQuizActivity extends AppCompatActivity {
             }
         });
 
+        //When button is clicked, it rediverts users to desired destination
         btnHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -339,6 +370,7 @@ public class PersonalityQuizActivity extends AppCompatActivity {
             }
         });
 
+        //When button is clicked, it rediverts users to desired destination
         btnPersonalityQuizzes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -347,6 +379,7 @@ public class PersonalityQuizActivity extends AppCompatActivity {
             }
         });
 
+        //When button is clicked, it rediverts users to desired destination
         btnMockAssessments.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -355,6 +388,7 @@ public class PersonalityQuizActivity extends AppCompatActivity {
             }
         });
 
+        //When button is clicked, it rediverts users to desired destination
         btnJobSuggestions.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -363,6 +397,7 @@ public class PersonalityQuizActivity extends AppCompatActivity {
             }
         });
 
+        //When button is clicked, it rediverts users to desired destination
         btnResourceVideos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
